@@ -14,6 +14,12 @@ Compare ready and desired pod count
 [[ $(oc -n NAMESPACE get dc DC_NAME -o go-template='{{.status.readyReplicas}}') == $(oc -n NAMESPACE get dc DC_NAME -o go-template='{{.status.replicas}}') ]]
 ```
 
+Compare environment variables of pods
+
+```s
+[[ $(oc get pod data-consumer-75f69c845d-564bq -o go-template='{{(index (index .spec.containers 0).env 1)}}') == $(oc get pod data-producer-74f5d89975-vwxhw -o go-template='{{(index (index .spec.containers 0).env 0)}}') ]]
+```
+
 
 ## Simple automated apply environment script
 
