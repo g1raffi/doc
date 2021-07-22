@@ -1,5 +1,20 @@
 # OpenShift
 
+## Go Templates
+
+Get route host
+
+```s
+curl $(oc get route ROUTE_NAME -o go-template='{{(index .status.ingress 0).host}}')/data
+```
+
+Compare ready and desired pod count
+
+```s
+[[ $(oc -n NAMESPACE get dc DC_NAME -o go-template='{{.status.readyReplicas}}') == $(oc -n NAMESPACE get dc DC_NAME -o go-template='{{.status.replicas}}') ]]
+```
+
+
 ## Simple automated apply environment script
 
 ```bash

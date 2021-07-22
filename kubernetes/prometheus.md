@@ -24,3 +24,11 @@ sum_by(pod_name, instance)(container_memory_working_set_bytes{namespace=""}
 kube_pod_container_resource_requests_memory_bytes{namespace = ""}
 ```
 
+### Memory usage relative to request
+
+```
+sum by (container, pod, namespace) (container_memory_working_set_bytes{namespace = "pitc-rhe-serverless",container!="POD",container!=""})
+/
+sum by (container, pod, namespace) (kube_pod_container_resource_requests_memory_bytes{namespace = "pitc-rhe-serverless"})
+```
+
