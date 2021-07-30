@@ -102,3 +102,21 @@ To add services to the service mesh add the namespace to the ServiceMeshMemberRo
 oc -n istio-system patch --type='json' smmr default -p '[{"op": "add", "path": "/spec/members", "value":["'"NAMESPACE_TO_ADD"'"]}]'
 ```
 
+
+## Getting applications to run in a service mesh
+
+**Add the application to the ServiceMeshMemberRoll**:
+
+```s
+oc -n istio-system patch --type='json' smmr default -p '[{"op": "add", "path": "/spec/members", "value":["'"NAMESPACE_TO_ADD"'"]}]'
+```
+
+
+**Patch your Workload to opt-in with sidecar enrollment**:
+
+```s
+oc patch deployment DEPLOYMENTNAME -p '{"spec":{"template":{"metadata":{"annotations":{"sidecar.istio.io/inject":"true"}}}}}' --type=merge
+```
+
+
+
