@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: consumer1
+  name: consumer1
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: consumer1
+  strategy:
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: consumer1
+    spec:
+      containers:
+        - env:
+            - name: QUARKUS_LOG_LEVEL
+              value: INFO
+            - name: AMQP_HOST
+              value: artemis-cluster-hdls-svc
+            - name: AMQP_PORT
+              value: "61616"
+            - name: AMQP_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  key: AMQ_CLUSTER_USER
+                  name: artemis-cluster-credentials-secret
+            - name: AMQP_PASSSWORD
+              valueFrom:
+                secretKeyRef:
+                  key: AMQ_CLUSTER_PASSWORD
+                  name: artemis-cluster-credentials-secret
+          image: docker.io/g1raffi/amqp-consumer:latest
+          imagePullPolicy: Always
+          name: amqp-consumer
+          resources: {}
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+      restartPolicy: Always

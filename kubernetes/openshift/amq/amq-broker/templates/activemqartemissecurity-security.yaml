@@ -1,0 +1,33 @@
+apiVersion: broker.amq.io/v1alpha1
+kind: ActiveMQArtemisSecurity
+metadata:
+  name: {{ include "amq-broker.fullname" . }}
+  labels:
+    {{- include "amq-broker.labels" . | nindent 4 }}
+spec:
+  loginModules:
+    propertiesLoginModules:
+    - name: property-module-users
+      users:
+      {{- range .Values.amq.security.users }}
+      - name: {{ .name }}
+        password: {{ .password }}
+        roles: 
+            {{- toYaml .roles | nindent 8 }}
+      {{- end }}
+  securityDomains:
+    brokerDomain:
+      loginModules:
+      - flag: sufficient
+        name: property-module-users
+      name: activemq
+  securitySettings:
+    broker:
+      {{- range .Values.amq.addresses }}
+      - match: {{ .addressName | squote}}
+        {{- with .permissions }}
+        permissions:
+          {{- toYaml . | nindent 8 }}
+        {{- end }}
+      {{- end }}
+  

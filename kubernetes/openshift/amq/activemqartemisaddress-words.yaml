@@ -1,0 +1,8 @@
+apiVersion: broker.amq.io/v2alpha3
+kind: ActiveMQArtemisAddress
+metadata:
+  name: words
+spec:
+  addressName: words
+  queueName: words
+  routingType: anycast

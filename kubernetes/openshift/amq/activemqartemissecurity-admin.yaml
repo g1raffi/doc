@@ -1,0 +1,54 @@
+apiVersion: broker.amq.io/v1alpha1
+kind: ActiveMQArtemisSecurity
+metadata:
+  name: admin
+spec:
+  loginModules:
+    propertiesLoginModules:
+    - name: prop-module-admin
+      users:
+      - name: amqadmin
+        password: changeme
+        roles:
+        - admin
+        - root
+  securityDomains:
+    brokerDomain:
+      loginModules:
+      - flag: sufficient
+        name: prop-module-admin
+      name: activemq
+  securitySettings:
+    broker:
+    - match: '#'
+      permissions:
+      - operationType: send
+        roles:
+        - admin
+        - root
+      - operationType: createAddress
+        roles:
+        - admin
+        - root
+      - operationType: createDurableQueue
+        roles:
+        - admin
+        - root
+      - operationType: consume
+        roles:
+        - admin
+        - root
+    - match: 'clu-queue'
+      permissions:
+      - operationType: send
+        roles:
+        - admin
+      - operationType: createAddress
+        roles:
+        - admin
+      - operationType: createDurableQueue
+        roles:
+        - admin
+      - operationType: consume
+        roles:
+        - admin

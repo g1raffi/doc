@@ -1,0 +1,885 @@
+Starting the Java application using /opt/jboss/container/java/run/run-java.sh ...
+INFO exec  java -Dquarkus.http.host=0.0.0.0 -Djava.util.logging.manager=org.jboss.logmanager.LogManager -XX:+UseParallelGC -XX:MinHeapFreeRatio=10 -XX:MaxHeapFreeRatio=20 -XX:GCTimeRatio=4 -XX:AdaptiveSizePolicyWeight=90 -XX:+ExitOnOutOfMemoryError -cp "." -jar /deployments/quarkus-run.jar 
+__  ____  __  _____   ___  __ ____  ______ 
+ --/ __ \/ / / / _ | / _ \/ //_/ / / / __/ 
+ -/ /_/ / /_/ / __ |/ , _/ ,< / /_/ /\ \   
+--\___\_\____/_/ |_/_/|_/_/|_|\____/___/   
+2022-05-06 09:46:01,500 DEBUG [org.jbo.logging] (main) Logging Provider: org.jboss.logging.JBossLogManagerProvider
+2022-05-06 09:46:01,514 WARN  [io.qua.config] (main) Unrecognized configuration key "quarkus.http.host" was provided; it will be ignored; verify that the dependency extension for this configuration is set or that you did not make a typo
+2022-05-06 09:46:01,707 DEBUG [io.qua.arc.impl] (main) ArC DI container initialized [beans=38, observers=7]
+2022-05-06 09:46:01,795 DEBUG [io.net.uti.int.log.InternalLoggerFactory] (Thread-0) Using SLF4J as the default logging framework
+2022-05-06 09:46:01,801 DEBUG [org.jbo.threads] (main) JBoss Threads version 3.4.2.Final
+2022-05-06 09:46:01,812 DEBUG [io.net.uti.int.PlatformDependent0] (Thread-0) -Dio.netty.noUnsafe: false
+2022-05-06 09:46:01,813 DEBUG [io.net.uti.int.PlatformDependent0] (Thread-0) Java version: 11
+2022-05-06 09:46:01,815 DEBUG [io.net.uti.int.PlatformDependent0] (Thread-0) java.nio.Buffer.address: available
+2022-05-06 09:46:01,816 DEBUG [io.net.uti.int.PlatformDependent0] (Thread-0) java.nio.Bits.unaligned: available, true
+2022-05-06 09:46:01,819 DEBUG [io.net.uti.int.PlatformDependent0] (Thread-0) java.nio.DirectByteBuffer.<init>(long, int): unavailable
+2022-05-06 09:46:01,819 DEBUG [io.net.uti.int.PlatformDependent] (Thread-0) sun.misc.Unsafe: available
+2022-05-06 09:46:01,836 DEBUG [io.net.uti.int.PlatformDependent] (Thread-0) maxDirectMemory: 6179782656 bytes (maybe)
+2022-05-06 09:46:01,836 DEBUG [io.net.uti.int.PlatformDependent] (Thread-0) -Dio.netty.tmpdir: /tmp (java.io.tmpdir)
+2022-05-06 09:46:01,836 DEBUG [io.net.uti.int.PlatformDependent] (Thread-0) -Dio.netty.bitMode: 64 (sun.arch.data.model)
+2022-05-06 09:46:01,841 DEBUG [io.net.uti.int.PlatformDependent] (Thread-0) -Dio.netty.maxDirectMemory: -1 bytes
+2022-05-06 09:46:01,841 DEBUG [io.net.uti.int.PlatformDependent] (Thread-0) -Dio.netty.uninitializedArrayAllocationThreshold: -1
+2022-05-06 09:46:01,842 DEBUG [io.net.uti.int.CleanerJava9] (Thread-0) java.nio.ByteBuffer.cleaner(): available
+2022-05-06 09:46:01,842 DEBUG [io.net.uti.int.PlatformDependent] (Thread-0) -Dio.netty.noPreferDirect: false
+2022-05-06 09:46:01,854 DEBUG [io.net.cha.DefaultChannelId] (Thread-0) -Dio.netty.processId: 1 (auto-detected)
+2022-05-06 09:46:01,867 DEBUG [io.net.cha.DefaultChannelId] (Thread-0) -Dio.netty.machineId: 16:ae:7c:ac:1b:7e:35:2f (user-set)
+2022-05-06 09:46:01,955 DEBUG [io.ver.cor.log.LoggerFactory] (main) Using io.vertx.core.logging.SLF4JLogDelegateFactory
+2022-05-06 09:46:01,965 DEBUG [io.qua.ver.cor.run.VertxCoreRecorder] (main) Vert.x Cache configured to: /tmp/vertx-cache/7914750576600463204
+2022-05-06 09:46:01,987 DEBUG [io.net.uti.ResourceLeakDetector] (main) -Dio.netty.leakDetection.level: simple
+2022-05-06 09:46:01,987 DEBUG [io.net.uti.ResourceLeakDetector] (main) -Dio.netty.leakDetection.targetRecords: 4
+2022-05-06 09:46:02,005 DEBUG [io.net.cha.MultithreadEventLoopGroup] (main) -Dio.netty.eventLoopThreads: 2
+2022-05-06 09:46:02,019 DEBUG [io.net.uti.int.InternalThreadLocalMap] (main) -Dio.netty.threadLocalMap.stringBuilder.initialSize: 1024
+2022-05-06 09:46:02,020 DEBUG [io.net.uti.int.InternalThreadLocalMap] (main) -Dio.netty.threadLocalMap.stringBuilder.maxSize: 4096
+2022-05-06 09:46:02,026 DEBUG [io.net.cha.nio.NioEventLoop] (main) -Dio.netty.noKeySetOptimization: false
+2022-05-06 09:46:02,026 DEBUG [io.net.cha.nio.NioEventLoop] (main) -Dio.netty.selectorAutoRebuildThreshold: 512
+2022-05-06 09:46:02,032 DEBUG [io.net.uti.int.PlatformDependent] (main) org.jctools-core.MpscChunkedArrayQueue: available
+2022-05-06 09:46:02,052 DEBUG [io.qua.ver.cor.run.VertxCoreRecorder] (main) Vertx has Native Transport Enabled: false
+2022-05-06 09:46:02,068 DEBUG [io.sma.rea.mes.provider] (main) SRMSG00226: Found incoming connectors: [smallrye-amqp]
+2022-05-06 09:46:02,069 DEBUG [io.sma.rea.mes.provider] (main) SRMSG00227: Found outgoing connectors: [smallrye-amqp]
+2022-05-06 09:46:02,072 DEBUG [io.sma.rea.mes.provider] (main) SRMSG00229: Channel manager initializing...
+2022-05-06 09:46:02,106 INFO  [io.sma.rea.mes.amqp] (main) SRMSG16201: AMQP broker configured to artemis-cluster-hdls-svc:61616 for channel words-in
+2022-05-06 09:46:02,171 DEBUG [io.sma.rea.mes.provider] (main) SRMSG00209: Beginning graph resolution, number of components detected: 2
+2022-05-06 09:46:02,180 DEBUG [io.sma.rea.mes.provider] (main) SRMSG00210: Graph resolution completed in 7843697 ns
+2022-05-06 09:46:02,180 DEBUG [io.sma.rea.mes.provider] (main) SRMSG00235: Beginning materialization
+2022-05-06 09:46:02,213 INFO  [io.sma.rea.mes.amqp] (main) SRMSG16212: Establishing connection with AMQP broker
+2022-05-06 09:46:02,226 DEBUG [io.sma.rea.mes.provider] (main) SRMSG00236: Materialization completed in 45821915 ns
+2022-05-06 09:46:02,237 INFO  [io.quarkus] (main) consumer 1.0.0-SNAPSHOT on JVM (powered by Quarkus 2.8.2.Final) started in 1.187s. 
+2022-05-06 09:46:02,238 INFO  [io.quarkus] (main) Profile prod activated. 
+2022-05-06 09:46:02,238 INFO  [io.quarkus] (main) Installed features: [cdi, smallrye-context-propagation, smallrye-reactive-messaging, smallrye-reactive-messaging-amqp, vertx]
+2022-05-06 09:46:02,253 DEBUG [io.net.uti.NetUtil] (vert.x-eventloop-thread-0) -Djava.net.preferIPv4Stack: false
+2022-05-06 09:46:02,254 DEBUG [io.net.uti.NetUtil] (vert.x-eventloop-thread-0) -Djava.net.preferIPv6Addresses: false
+2022-05-06 09:46:02,257 DEBUG [io.net.uti.NetUtilInitializations] (vert.x-eventloop-thread-0) Loopback interface: lo (lo, 0:0:0:0:0:0:0:1%lo)
+2022-05-06 09:46:02,258 DEBUG [io.net.uti.NetUtil] (vert.x-eventloop-thread-0) /proc/sys/net/core/somaxconn: 128
+2022-05-06 09:46:02,319 DEBUG [io.net.buf.PooledByteBufAllocator] (vert.x-eventloop-thread-0) -Dio.netty.allocator.numHeapArenas: 2
+2022-05-06 09:46:02,319 DEBUG [io.net.buf.PooledByteBufAllocator] (vert.x-eventloop-thread-0) -Dio.netty.allocator.numDirectArenas: 2
+2022-05-06 09:46:02,319 DEBUG [io.net.buf.PooledByteBufAllocator] (vert.x-eventloop-thread-0) -Dio.netty.allocator.pageSize: 8192
+2022-05-06 09:46:02,319 DEBUG [io.net.buf.PooledByteBufAllocator] (vert.x-eventloop-thread-0) -Dio.netty.allocator.maxOrder: 3
+2022-05-06 09:46:02,320 DEBUG [io.net.buf.PooledByteBufAllocator] (vert.x-eventloop-thread-0) -Dio.netty.allocator.chunkSize: 65536
+2022-05-06 09:46:02,320 DEBUG [io.net.buf.PooledByteBufAllocator] (vert.x-eventloop-thread-0) -Dio.netty.allocator.smallCacheSize: 256
+2022-05-06 09:46:02,320 DEBUG [io.net.buf.PooledByteBufAllocator] (vert.x-eventloop-thread-0) -Dio.netty.allocator.normalCacheSize: 64
+2022-05-06 09:46:02,320 DEBUG [io.net.buf.PooledByteBufAllocator] (vert.x-eventloop-thread-0) -Dio.netty.allocator.maxCachedBufferCapacity: 32768
+2022-05-06 09:46:02,320 DEBUG [io.net.buf.PooledByteBufAllocator] (vert.x-eventloop-thread-0) -Dio.netty.allocator.cacheTrimInterval: 8192
+2022-05-06 09:46:02,321 DEBUG [io.net.buf.PooledByteBufAllocator] (vert.x-eventloop-thread-0) -Dio.netty.allocator.cacheTrimIntervalMillis: 0
+2022-05-06 09:46:02,321 DEBUG [io.net.buf.PooledByteBufAllocator] (vert.x-eventloop-thread-0) -Dio.netty.allocator.useCacheForAllThreads: true
+2022-05-06 09:46:02,321 DEBUG [io.net.buf.PooledByteBufAllocator] (vert.x-eventloop-thread-0) -Dio.netty.allocator.maxCachedByteBuffersPerChunk: 1023
+2022-05-06 09:46:02,330 DEBUG [io.net.buf.ByteBufUtil] (vert.x-eventloop-thread-0) -Dio.netty.allocator.type: pooled
+2022-05-06 09:46:02,330 DEBUG [io.net.buf.ByteBufUtil] (vert.x-eventloop-thread-0) -Dio.netty.threadLocalDirectBufferSize: 0
+2022-05-06 09:46:02,330 DEBUG [io.net.buf.ByteBufUtil] (vert.x-eventloop-thread-0) -Dio.netty.maxThreadLocalCharBufferSize: 16384
+2022-05-06 09:46:02,519 DEBUG [io.net.uti.Recycler] (vert.x-eventloop-thread-0) -Dio.netty.recycler.maxCapacityPerThread: 4096
+2022-05-06 09:46:02,519 DEBUG [io.net.uti.Recycler] (vert.x-eventloop-thread-0) -Dio.netty.recycler.ratio: 8
+2022-05-06 09:46:02,519 DEBUG [io.net.uti.Recycler] (vert.x-eventloop-thread-0) -Dio.netty.recycler.chunkSize: 32
+2022-05-06 09:46:02,520 DEBUG [io.net.uti.Recycler] (vert.x-eventloop-thread-0) -Dio.netty.recycler.blocking: false
+2022-05-06 09:46:02,527 DEBUG [io.net.buf.AbstractByteBuf] (vert.x-eventloop-thread-0) -Dio.netty.buffer.checkAccessible: true
+2022-05-06 09:46:02,527 DEBUG [io.net.buf.AbstractByteBuf] (vert.x-eventloop-thread-0) -Dio.netty.buffer.checkBounds: true
+2022-05-06 09:46:02,529 DEBUG [io.net.uti.ResourceLeakDetectorFactory] (vert.x-eventloop-thread-0) Loaded default ResourceLeakDetector: io.netty.util.ResourceLeakDetector@626372eb
+2022-05-06 09:46:02,567 FINE  [org.apa.qpi.pro.eng.imp.SaslImpl] (vert.x-eventloop-thread-0) Handled outcome: SaslImpl [_outcome=PN_SASL_OK, state=PN_SASL_PASS, done=true, role=CLIENT]
+2022-05-06 09:46:02,575 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Open{ containerId='amq-broker', hostname='null', maxFrameSize=131072, channelMax=65535, idleTimeOut=30000, outgoingLocales=null, incomingLocales=null, offeredCapabilities=[sole-connection-for-container, DELAYED_DELIVERY, SHARED-SUBS, ANONYMOUS-RELAY], desiredCapabilities=null, properties={product=apache-activemq-artemis, version=2.18.0.redhat-00021}}
+2022-05-06 09:46:02,578 INFO  [io.sma.rea.mes.amqp] (vert.x-eventloop-thread-0) SRMSG16213: Connection with AMQP broker established
+2022-05-06 09:46:02,628 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Begin{remoteChannel=0, nextOutgoingId=1, incomingWindow=2147483647, outgoingWindow=2147483647, handleMax=65535, offeredCapabilities=null, desiredCapabilities=null, properties=null}
+2022-05-06 09:46:02,629 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Attach{name='words-in', handle=0, role=SENDER, sndSettleMode=UNSETTLED, rcvSettleMode=FIRST, source=Source{address='words', durable=NONE, expiryPolicy=SESSION_END, timeout=0, dynamic=false, dynamicNodeProperties=null, distributionMode=null, filter=null, defaultOutcome=Released{}, outcomes=[amqp:accepted:list, amqp:rejected:list, amqp:released:list, amqp:modified:list], capabilities=null}, target=Target{address='null', durable=NONE, expiryPolicy=SESSION_END, timeout=0, dynamic=false, dynamicNodeProperties=null, capabilities=null}, unsettled=null, incompleteUnsettled=false, initialDeliveryCount=0, maxMessageSize=null, offeredCapabilities=null, desiredCapabilities=null, properties=null}
+2022-05-06 09:46:02,633 INFO  [io.sma.rea.mes.amqp] (vert.x-eventloop-thread-0) SRMSG16203: AMQP Receiver listening address words
+2022-05-06 09:46:02,661 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=0, deliveryTag=\x00, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x051: #0]
+2022-05-06 09:46:02,666 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=1, deliveryTag=\x01, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x051: #1]
+2022-05-06 09:46:02,667 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=2, deliveryTag=\x02, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x051: #2]
+2022-05-06 09:46:02,668 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=3, deliveryTag=\x03, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x051: #3]
+2022-05-06 09:46:02,669 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=4, deliveryTag=\x04, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x051: #4]
+2022-05-06 09:46:02,670 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=5, deliveryTag=\x05, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x051: #5]
+2022-05-06 09:46:02,671 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=6, deliveryTag=\x06, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x051: #6]
+2022-05-06 09:46:02,672 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=7, deliveryTag=\x07, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x051: #7]
+2022-05-06 09:46:02,673 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=8, deliveryTag=\x08, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x051: #8]
+2022-05-06 09:46:02,719 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=9, deliveryTag=\x09, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x051: #9]
+2022-05-06 09:46:02,719 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=10, deliveryTag=\x0a, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x061: #10]
+2022-05-06 09:46:02,720 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=11, deliveryTag=\x0b, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x061: #11]
+2022-05-06 09:46:02,721 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=12, deliveryTag=\x0c, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x061: #12]
+2022-05-06 09:46:02,722 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=13, deliveryTag=\x0d, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x061: #13]
+2022-05-06 09:46:02,723 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=14, deliveryTag=\x0e, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x061: #14]
+2022-05-06 09:46:02,724 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=15, deliveryTag=\x0f, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x061: #15]
+2022-05-06 09:46:02,724 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=16, deliveryTag=\x10, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x061: #16]
+2022-05-06 09:46:02,725 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=17, deliveryTag=\x11, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x061: #17]
+2022-05-06 09:46:02,725 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=18, deliveryTag=\x12, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x061: #18]
+2022-05-06 09:46:02,726 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=19, deliveryTag=\x13, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x061: #19]
+2022-05-06 09:46:02,726 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=20, deliveryTag=\x14, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x061: #20]
+2022-05-06 09:46:02,727 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=21, deliveryTag=\x15, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x061: #21]
+2022-05-06 09:46:02,728 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=22, deliveryTag=\x16, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x061: #22]
+2022-05-06 09:46:02,728 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=23, deliveryTag=\x17, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x061: #23]
+2022-05-06 09:46:02,729 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=24, deliveryTag=\x18, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x061: #24]
+2022-05-06 09:46:02,729 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=25, deliveryTag=\x19, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x061: #25]
+2022-05-06 09:46:02,730 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=26, deliveryTag=\x1a, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x061: #26]
+2022-05-06 09:46:02,730 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=27, deliveryTag=\x1b, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x061: #27]
+2022-05-06 09:46:02,731 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=28, deliveryTag=\x1c, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x061: #28]
+2022-05-06 09:46:02,731 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=29, deliveryTag=\x1d, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x061: #29]
+2022-05-06 09:46:02,732 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=30, deliveryTag=\x1e, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x061: #30]
+2022-05-06 09:46:02,733 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=31, deliveryTag=\x1f, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x061: #31]
+2022-05-06 09:46:02,734 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=32, deliveryTag= , messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x061: #32]
+2022-05-06 09:46:02,734 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=33, deliveryTag=!, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x061: #33]
+2022-05-06 09:46:02,735 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=34, deliveryTag=", messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x061: #34]
+2022-05-06 09:46:02,735 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=35, deliveryTag=#, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x061: #35]
+2022-05-06 09:46:02,736 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=36, deliveryTag=$, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x061: #36]
+2022-05-06 09:46:02,736 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=37, deliveryTag=%, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x061: #37]
+2022-05-06 09:46:02,737 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=38, deliveryTag=&, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x061: #38]
+2022-05-06 09:46:02,737 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=39, deliveryTag=', messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x061: #39]
+2022-05-06 09:46:02,738 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=40, deliveryTag=(, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x061: #40]
+2022-05-06 09:46:02,738 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=41, deliveryTag=), messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x061: #41]
+2022-05-06 09:46:02,739 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=42, deliveryTag=*, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x061: #42]
+2022-05-06 09:46:02,740 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=43, deliveryTag=+, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x061: #43]
+2022-05-06 09:46:02,740 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=44, deliveryTag=,, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x061: #44]
+2022-05-06 09:46:02,741 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=45, deliveryTag=-, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x061: #45]
+2022-05-06 09:46:02,742 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=46, deliveryTag=., messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x061: #46]
+2022-05-06 09:46:02,742 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=47, deliveryTag=/, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x061: #47]
+2022-05-06 09:46:02,742 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=48, deliveryTag=0, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x061: #48]
+2022-05-06 09:46:02,743 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=49, deliveryTag=1, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x061: #49]
+2022-05-06 09:46:02,744 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=50, deliveryTag=2, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x061: #50]
+2022-05-06 09:46:02,744 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=51, deliveryTag=3, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x061: #51]
+2022-05-06 09:46:02,745 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=52, deliveryTag=4, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x061: #52]
+2022-05-06 09:46:02,745 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=53, deliveryTag=5, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x061: #53]
+2022-05-06 09:46:02,746 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=54, deliveryTag=6, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x061: #54]
+2022-05-06 09:46:02,746 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=55, deliveryTag=7, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x061: #55]
+2022-05-06 09:46:02,747 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=56, deliveryTag=8, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x061: #56]
+2022-05-06 09:46:02,747 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=57, deliveryTag=9, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x061: #57]
+2022-05-06 09:46:02,747 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=58, deliveryTag=:, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x061: #58]
+2022-05-06 09:46:02,748 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=59, deliveryTag=;, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x061: #59]
+2022-05-06 09:46:02,748 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=60, deliveryTag=<, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x061: #60]
+2022-05-06 09:46:02,748 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=61, deliveryTag==, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x061: #61]
+2022-05-06 09:46:02,749 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=62, deliveryTag=>, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x061: #62]
+2022-05-06 09:46:02,749 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=63, deliveryTag=?, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x061: #63]
+2022-05-06 09:46:02,749 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=64, deliveryTag=@, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x061: #64]
+2022-05-06 09:46:02,750 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=65, deliveryTag=A, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x061: #65]
+2022-05-06 09:46:02,750 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=66, deliveryTag=B, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x061: #66]
+2022-05-06 09:46:02,750 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=67, deliveryTag=C, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x061: #67]
+2022-05-06 09:46:02,751 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=68, deliveryTag=D, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x061: #68]
+2022-05-06 09:46:02,751 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=69, deliveryTag=E, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x061: #69]
+2022-05-06 09:46:02,752 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=70, deliveryTag=F, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x061: #70]
+2022-05-06 09:46:02,752 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=71, deliveryTag=G, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x061: #71]
+2022-05-06 09:46:02,752 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=72, deliveryTag=H, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x061: #72]
+2022-05-06 09:46:02,753 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=73, deliveryTag=I, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x061: #73]
+2022-05-06 09:46:02,753 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=74, deliveryTag=J, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x061: #74]
+2022-05-06 09:46:02,753 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=75, deliveryTag=K, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x061: #75]
+2022-05-06 09:46:02,754 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=76, deliveryTag=L, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x061: #76]
+2022-05-06 09:46:02,754 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=77, deliveryTag=M, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x061: #77]
+2022-05-06 09:46:02,754 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=78, deliveryTag=N, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x061: #78]
+2022-05-06 09:46:02,755 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=79, deliveryTag=O, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x061: #79]
+2022-05-06 09:46:02,755 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=80, deliveryTag=P, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x061: #80]
+2022-05-06 09:46:02,755 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=81, deliveryTag=Q, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x061: #81]
+2022-05-06 09:46:02,756 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=82, deliveryTag=R, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x061: #82]
+2022-05-06 09:46:02,756 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=83, deliveryTag=S, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x061: #83]
+2022-05-06 09:46:02,758 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=84, deliveryTag=T, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x061: #84]
+2022-05-06 09:46:02,758 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=85, deliveryTag=U, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x061: #85]
+2022-05-06 09:46:02,759 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=86, deliveryTag=V, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x061: #86]
+2022-05-06 09:46:02,760 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=87, deliveryTag=W, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x061: #87]
+2022-05-06 09:46:02,760 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=88, deliveryTag=X, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x061: #88]
+2022-05-06 09:46:02,761 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=89, deliveryTag=Y, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x061: #89]
+2022-05-06 09:46:02,761 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=90, deliveryTag=Z, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x061: #90]
+2022-05-06 09:46:02,761 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=91, deliveryTag=[, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x061: #91]
+2022-05-06 09:46:02,761 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=92, deliveryTag=\x5c, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x061: #92]
+2022-05-06 09:46:02,762 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=93, deliveryTag=], messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x061: #93]
+2022-05-06 09:46:02,762 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=94, deliveryTag=^, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x061: #94]
+2022-05-06 09:46:02,762 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=95, deliveryTag=_, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x061: #95]
+2022-05-06 09:46:02,762 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=96, deliveryTag=`, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x061: #96]
+2022-05-06 09:46:02,763 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=97, deliveryTag=a, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x061: #97]
+2022-05-06 09:46:02,763 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=98, deliveryTag=b, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x061: #98]
+2022-05-06 09:46:02,764 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=99, deliveryTag=c, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x061: #99]
+2022-05-06 09:46:02,764 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=100, deliveryTag=d, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #100]
+2022-05-06 09:46:02,764 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=101, deliveryTag=e, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #101]
+2022-05-06 09:46:02,765 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=102, deliveryTag=f, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #102]
+2022-05-06 09:46:02,765 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=103, deliveryTag=g, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #103]
+2022-05-06 09:46:02,765 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=104, deliveryTag=h, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #104]
+2022-05-06 09:46:02,766 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=105, deliveryTag=i, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #105]
+2022-05-06 09:46:02,766 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=106, deliveryTag=j, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #106]
+2022-05-06 09:46:02,766 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=107, deliveryTag=k, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #107]
+2022-05-06 09:46:02,767 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=108, deliveryTag=l, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #108]
+2022-05-06 09:46:02,767 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=109, deliveryTag=m, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #109]
+2022-05-06 09:46:02,767 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=110, deliveryTag=n, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #110]
+2022-05-06 09:46:02,768 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=111, deliveryTag=o, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #111]
+2022-05-06 09:46:02,768 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=112, deliveryTag=p, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #112]
+2022-05-06 09:46:02,769 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=113, deliveryTag=q, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #113]
+2022-05-06 09:46:02,769 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=114, deliveryTag=r, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #114]
+2022-05-06 09:46:02,769 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=115, deliveryTag=s, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #115]
+2022-05-06 09:46:02,770 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=116, deliveryTag=t, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #116]
+2022-05-06 09:46:02,770 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=117, deliveryTag=u, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #117]
+2022-05-06 09:46:02,770 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=118, deliveryTag=v, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #118]
+2022-05-06 09:46:02,770 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=119, deliveryTag=w, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #119]
+2022-05-06 09:46:02,771 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=120, deliveryTag=x, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #120]
+2022-05-06 09:46:02,771 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=121, deliveryTag=y, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #121]
+2022-05-06 09:46:02,771 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=122, deliveryTag=z, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #122]
+2022-05-06 09:46:02,772 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=123, deliveryTag={, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #123]
+2022-05-06 09:46:02,772 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=124, deliveryTag=|, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #124]
+2022-05-06 09:46:02,772 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=125, deliveryTag=}, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #125]
+2022-05-06 09:46:02,772 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=126, deliveryTag=~, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #126]
+2022-05-06 09:46:02,773 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=127, deliveryTag=\x7f, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #127]
+2022-05-06 09:46:02,773 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=128, deliveryTag=\x80, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #128]
+2022-05-06 09:46:02,773 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=129, deliveryTag=\x81, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #129]
+2022-05-06 09:46:02,774 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=130, deliveryTag=\x82, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #130]
+2022-05-06 09:46:02,774 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=131, deliveryTag=\x83, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #131]
+2022-05-06 09:46:02,774 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=132, deliveryTag=\x84, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #132]
+2022-05-06 09:46:02,774 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=133, deliveryTag=\x85, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #133]
+2022-05-06 09:46:02,775 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=134, deliveryTag=\x86, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #134]
+2022-05-06 09:46:02,775 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=135, deliveryTag=\x87, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #135]
+2022-05-06 09:46:02,775 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=136, deliveryTag=\x88, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #136]
+2022-05-06 09:46:02,775 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=137, deliveryTag=\x89, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #137]
+2022-05-06 09:46:02,776 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=138, deliveryTag=\x8a, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #138]
+2022-05-06 09:46:02,776 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=139, deliveryTag=\x8b, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #139]
+2022-05-06 09:46:02,776 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=140, deliveryTag=\x8c, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #140]
+2022-05-06 09:46:02,776 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=141, deliveryTag=\x8d, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #141]
+2022-05-06 09:46:02,777 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=142, deliveryTag=\x8e, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #142]
+2022-05-06 09:46:02,777 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=143, deliveryTag=\x8f, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #143]
+2022-05-06 09:46:02,777 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=144, deliveryTag=\x90, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #144]
+2022-05-06 09:46:02,777 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=145, deliveryTag=\x91, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #145]
+2022-05-06 09:46:02,778 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=146, deliveryTag=\x92, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #146]
+2022-05-06 09:46:02,778 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=147, deliveryTag=\x93, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #147]
+2022-05-06 09:46:02,778 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=148, deliveryTag=\x94, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #148]
+2022-05-06 09:46:02,778 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=149, deliveryTag=\x95, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #149]
+2022-05-06 09:46:02,779 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=150, deliveryTag=\x96, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #150]
+2022-05-06 09:46:02,779 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=151, deliveryTag=\x97, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #151]
+2022-05-06 09:46:02,779 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=152, deliveryTag=\x98, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #152]
+2022-05-06 09:46:02,779 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=153, deliveryTag=\x99, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #153]
+2022-05-06 09:46:02,780 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=154, deliveryTag=\x9a, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #154]
+2022-05-06 09:46:02,780 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=155, deliveryTag=\x9b, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #155]
+2022-05-06 09:46:02,780 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=156, deliveryTag=\x9c, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #156]
+2022-05-06 09:46:02,780 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=157, deliveryTag=\x9d, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #157]
+2022-05-06 09:46:02,781 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=158, deliveryTag=\x9e, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #158]
+2022-05-06 09:46:02,781 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=159, deliveryTag=\x9f, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #159]
+2022-05-06 09:46:02,829 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=160, deliveryTag=\xa0, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #160]
+2022-05-06 09:46:02,829 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=161, deliveryTag=\xa1, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #161]
+2022-05-06 09:46:02,830 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=162, deliveryTag=\xa2, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #162]
+2022-05-06 09:46:02,830 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=163, deliveryTag=\xa3, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #163]
+2022-05-06 09:46:02,830 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=164, deliveryTag=\xa4, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #164]
+2022-05-06 09:46:02,830 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=165, deliveryTag=\xa5, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #165]
+2022-05-06 09:46:02,831 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=166, deliveryTag=\xa6, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #166]
+2022-05-06 09:46:02,831 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=167, deliveryTag=\xa7, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #167]
+2022-05-06 09:46:02,831 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=168, deliveryTag=\xa8, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #168]
+2022-05-06 09:46:02,831 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=169, deliveryTag=\xa9, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #169]
+2022-05-06 09:46:02,832 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=170, deliveryTag=\xaa, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #170]
+2022-05-06 09:46:02,832 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=171, deliveryTag=\xab, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #171]
+2022-05-06 09:46:02,832 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=172, deliveryTag=\xac, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #172]
+2022-05-06 09:46:02,832 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=173, deliveryTag=\xad, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #173]
+2022-05-06 09:46:02,833 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=174, deliveryTag=\xae, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #174]
+2022-05-06 09:46:02,833 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=175, deliveryTag=\xaf, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #175]
+2022-05-06 09:46:02,833 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=176, deliveryTag=\xb0, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #176]
+2022-05-06 09:46:02,833 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=177, deliveryTag=\xb1, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #177]
+2022-05-06 09:46:02,833 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=178, deliveryTag=\xb2, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #178]
+2022-05-06 09:46:02,834 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=179, deliveryTag=\xb3, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #179]
+2022-05-06 09:46:02,834 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=180, deliveryTag=\xb4, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #180]
+2022-05-06 09:46:02,834 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=181, deliveryTag=\xb5, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #181]
+2022-05-06 09:46:02,834 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=182, deliveryTag=\xb6, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #182]
+2022-05-06 09:46:02,835 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=183, deliveryTag=\xb7, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #183]
+2022-05-06 09:46:02,835 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=184, deliveryTag=\xb8, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #184]
+2022-05-06 09:46:02,835 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=185, deliveryTag=\xb9, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #185]
+2022-05-06 09:46:02,835 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=186, deliveryTag=\xba, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #186]
+1: #0
+1: #1
+1: #2
+1: #3
+1: #4
+1: #5
+1: #6
+1: #7
+1: #8
+1: #9
+1: #10
+1: #11
+1: #12
+1: #13
+1: #14
+1: #15
+1: #16
+1: #17
+1: #18
+1: #19
+1: #20
+1: #21
+1: #22
+1: #23
+1: #24
+1: #25
+1: #26
+1: #27
+1: #28
+1: #29
+1: #30
+1: #31
+1: #32
+1: #33
+1: #34
+1: #35
+1: #36
+1: #37
+1: #38
+1: #39
+1: #40
+1: #41
+1: #42
+1: #43
+1: #44
+1: #45
+1: #46
+1: #47
+1: #48
+1: #49
+1: #50
+1: #51
+1: #52
+1: #53
+1: #54
+1: #55
+1: #56
+1: #57
+1: #58
+1: #59
+1: #60
+1: #61
+1: #62
+1: #63
+1: #64
+1: #65
+1: #66
+1: #67
+1: #68
+1: #69
+1: #70
+1: #71
+1: #72
+1: #73
+1: #74
+1: #75
+1: #76
+1: #77
+1: #78
+1: #79
+1: #80
+1: #81
+1: #82
+1: #83
+1: #84
+1: #85
+1: #86
+1: #87
+1: #88
+1: #89
+1: #90
+1: #91
+1: #92
+1: #93
+1: #94
+1: #95
+1: #96
+1: #97
+1: #98
+1: #99
+1: #100
+1: #101
+1: #102
+1: #103
+1: #104
+1: #105
+1: #106
+1: #107
+1: #108
+1: #109
+1: #110
+1: #111
+1: #112
+1: #113
+1: #114
+1: #115
+1: #116
+1: #117
+1: #118
+1: #119
+1: #120
+1: #121
+1: #122
+1: #123
+1: #124
+1: #125
+1: #126
+1: #127
+1: #128
+1: #129
+1: #130
+1: #131
+1: #132
+1: #133
+1: #134
+1: #135
+1: #136
+1: #137
+1: #138
+1: #139
+1: #140
+1: #141
+1: #142
+1: #143
+1: #144
+1: #145
+1: #146
+1: #147
+1: #148
+1: #149
+1: #150
+1: #151
+1: #152
+1: #153
+1: #154
+1: #155
+1: #156
+1: #157
+1: #158
+1: #159
+1: #160
+1: #161
+1: #162
+1: #163
+1: #164
+1: #165
+1: #166
+1: #167
+1: #168
+1: #169
+1: #170
+1: #171
+1: #172
+1: #173
+1: #174
+1: #175
+1: #176
+1: #177
+1: #178
+1: #179
+1: #180
+1: #181
+1: #182
+1: #183
+1: #184
+1: #185
+1: #186
+2022-05-06 09:46:04,016 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=187, deliveryTag=\x00, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #187]
+1: #187
+2022-05-06 09:46:06,014 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=188, deliveryTag=\x01, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #188]
+1: #188
+2022-05-06 09:46:08,015 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=189, deliveryTag=\x02, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #189]
+1: #189
+2022-05-06 09:46:10,015 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=190, deliveryTag=\x03, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #190]
+1: #190
+2022-05-06 09:46:12,017 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=191, deliveryTag=\x04, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #191]
+1: #191
+2022-05-06 09:46:14,015 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=192, deliveryTag=\x05, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #192]
+1: #192
+2022-05-06 09:46:16,015 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=193, deliveryTag=\x06, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #193]
+1: #193
+2022-05-06 09:46:18,018 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=194, deliveryTag=\x07, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #194]
+1: #194
+2022-05-06 09:46:20,042 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=195, deliveryTag=\x08, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #195]
+1: #195
+2022-05-06 09:46:22,019 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=196, deliveryTag=\x09, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #196]
+1: #196
+2022-05-06 09:46:24,014 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=197, deliveryTag=\x0a, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #197]
+1: #197
+2022-05-06 09:46:26,019 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=198, deliveryTag=\x0b, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #198]
+1: #198
+2022-05-06 09:46:28,014 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=199, deliveryTag=\x0c, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #199]
+1: #199
+2022-05-06 09:46:30,015 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=200, deliveryTag=\x0d, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #200]
+1: #200
+2022-05-06 09:46:32,021 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=201, deliveryTag=\x0e, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #201]
+1: #201
+2022-05-06 09:46:34,015 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=202, deliveryTag=\x0f, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #202]
+1: #202
+2022-05-06 09:46:36,016 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=203, deliveryTag=\x10, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #203]
+1: #203
+2022-05-06 09:46:38,017 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=204, deliveryTag=\x11, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #204]
+1: #204
+2022-05-06 09:46:40,016 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=205, deliveryTag=\x12, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #205]
+1: #205
+2022-05-06 09:46:42,017 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=206, deliveryTag=\x13, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #206]
+1: #206
+2022-05-06 09:46:44,014 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=207, deliveryTag=\x14, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #207]
+1: #207
+2022-05-06 09:46:46,021 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=208, deliveryTag=\x15, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #208]
+1: #208
+2022-05-06 09:46:48,014 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=209, deliveryTag=\x16, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #209]
+1: #209
+2022-05-06 09:46:50,015 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=210, deliveryTag=\x17, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #210]
+1: #210
+2022-05-06 09:46:52,014 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=211, deliveryTag=\x18, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #211]
+1: #211
+2022-05-06 09:46:54,025 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=212, deliveryTag=\x19, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #212]
+1: #212
+2022-05-06 09:46:56,015 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=213, deliveryTag=\x1a, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #213]
+1: #213
+2022-05-06 09:46:58,014 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=214, deliveryTag=\x1b, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #214]
+1: #214
+2022-05-06 09:47:00,014 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=215, deliveryTag=\x1c, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #215]
+1: #215
+2022-05-06 09:47:02,029 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=216, deliveryTag=\x1d, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #216]
+1: #216
+2022-05-06 09:47:04,021 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=217, deliveryTag=\x1e, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #217]
+1: #217
+2022-05-06 09:47:06,017 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=218, deliveryTag=\x1f, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #218]
+1: #218
+2022-05-06 09:47:08,015 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=219, deliveryTag= , messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #219]
+1: #219
+2022-05-06 09:47:10,014 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=220, deliveryTag=!, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #220]
+1: #220
+2022-05-06 09:47:12,020 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=221, deliveryTag=", messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #221]
+1: #221
+2022-05-06 09:47:14,017 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=222, deliveryTag=#, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #222]
+1: #222
+2022-05-06 09:47:16,016 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=223, deliveryTag=$, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #223]
+1: #223
+2022-05-06 09:47:18,018 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=224, deliveryTag=%, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #224]
+1: #224
+2022-05-06 09:47:20,018 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=225, deliveryTag=&, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #225]
+1: #225
+2022-05-06 09:47:22,017 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=226, deliveryTag=', messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #226]
+1: #226
+2022-05-06 09:47:24,022 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=227, deliveryTag=(, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #227]
+1: #227
+2022-05-06 09:47:26,020 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=228, deliveryTag=), messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #228]
+1: #228
+2022-05-06 09:47:28,015 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=229, deliveryTag=*, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #229]
+1: #229
+2022-05-06 09:47:30,016 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=230, deliveryTag=+, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #230]
+1: #230
+2022-05-06 09:47:32,015 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=231, deliveryTag=,, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #231]
+1: #231
+2022-05-06 09:47:34,013 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=232, deliveryTag=-, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #232]
+1: #232
+2022-05-06 09:47:36,021 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=233, deliveryTag=., messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #233]
+1: #233
+2022-05-06 09:47:38,014 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=234, deliveryTag=/, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #234]
+1: #234
+2022-05-06 09:47:40,021 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=235, deliveryTag=0, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #235]
+1: #235
+2022-05-06 09:47:42,016 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Transfer{handle=0, deliveryId=236, deliveryTag=1, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #236]
+1: #236
+2022-05-06 09:47:43,212 FINE  [pro.trace] (vert.x-eventloop-thread-0) IN: CH[0] : Close{error=Error{condition=amqp:connection:forced, description='null', info=null}}
+2022-05-06 09:47:43,215 ERROR [io.sma.rea.mes.amqp] (vert.x-eventloop-thread-0) SRMSG16214: AMQP Connection failure: java.lang.Exception: Connection disconnected
+	at io.vertx.amqp.impl.AmqpConnectionImpl.onDisconnect(AmqpConnectionImpl.java:158)
+	at io.vertx.amqp.impl.AmqpConnectionImpl.lambda$null$3(AmqpConnectionImpl.java:113)
+	at io.vertx.proton.impl.ProtonConnectionImpl.fireRemoteClose(ProtonConnectionImpl.java:374)
+	at io.vertx.proton.impl.ProtonTransport.handleSocketBuffer(ProtonTransport.java:121)
+	at io.vertx.core.net.impl.NetSocketImpl.lambda$new$1(NetSocketImpl.java:98)
+	at io.vertx.core.streams.impl.InboundBuffer.handleEvent(InboundBuffer.java:240)
+	at io.vertx.core.streams.impl.InboundBuffer.write(InboundBuffer.java:130)
+	at io.vertx.core.net.impl.NetSocketImpl$DataMessageHandler.handle(NetSocketImpl.java:418)
+	at io.vertx.core.impl.EventLoopContext.emit(EventLoopContext.java:50)
+	at io.vertx.core.impl.ContextImpl.emit(ContextImpl.java:274)
+	at io.vertx.core.impl.EventLoopContext.emit(EventLoopContext.java:22)
+	at io.vertx.core.net.impl.NetSocketImpl.handleMessage(NetSocketImpl.java:394)
+	at io.vertx.core.net.impl.ConnectionBase.read(ConnectionBase.java:155)
+	at io.vertx.core.net.impl.VertxHandler.channelRead(VertxHandler.java:153)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:357)
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1410)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:919)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:166)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:722)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:658)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:584)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:496)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:986)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+
+2022-05-06 09:47:43,219 ERROR [io.sma.rea.mes.amqp] (vert.x-eventloop-thread-0) SRMSG16205: Unable to retrieve messages from AMQP, retrying...: java.lang.Exception: Connection disconnected
+	at io.vertx.amqp.impl.AmqpConnectionImpl.onDisconnect(AmqpConnectionImpl.java:158)
+	at io.vertx.amqp.impl.AmqpConnectionImpl.lambda$null$3(AmqpConnectionImpl.java:113)
+	at io.vertx.proton.impl.ProtonConnectionImpl.fireRemoteClose(ProtonConnectionImpl.java:374)
+	at io.vertx.proton.impl.ProtonTransport.handleSocketBuffer(ProtonTransport.java:121)
+	at io.vertx.core.net.impl.NetSocketImpl.lambda$new$1(NetSocketImpl.java:98)
+	at io.vertx.core.streams.impl.InboundBuffer.handleEvent(InboundBuffer.java:240)
+	at io.vertx.core.streams.impl.InboundBuffer.write(InboundBuffer.java:130)
+	at io.vertx.core.net.impl.NetSocketImpl$DataMessageHandler.handle(NetSocketImpl.java:418)
+	at io.vertx.core.impl.EventLoopContext.emit(EventLoopContext.java:50)
+	at io.vertx.core.impl.ContextImpl.emit(ContextImpl.java:274)
+	at io.vertx.core.impl.EventLoopContext.emit(EventLoopContext.java:22)
+	at io.vertx.core.net.impl.NetSocketImpl.handleMessage(NetSocketImpl.java:394)
+	at io.vertx.core.net.impl.ConnectionBase.read(ConnectionBase.java:155)
+	at io.vertx.core.net.impl.VertxHandler.channelRead(VertxHandler.java:153)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:357)
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1410)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:919)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:166)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:722)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:658)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:584)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:496)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:986)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+
+2022-05-06 09:47:44,361 INFO  [io.sma.rea.mes.amqp] (executor-thread-0) SRMSG16212: Establishing connection with AMQP broker
+2022-05-06 09:47:44,371 DEBUG [io.ver.cor.net.imp.NetClientImpl] (vert.x-eventloop-thread-1) Failed to create connection. Will retry in 10 milliseconds
+2022-05-06 09:47:44,384 DEBUG [io.ver.cor.net.imp.NetClientImpl] (vert.x-eventloop-thread-1) Failed to create connection. Will retry in 10 milliseconds
+2022-05-06 09:47:44,397 DEBUG [io.ver.cor.net.imp.NetClientImpl] (vert.x-eventloop-thread-1) Failed to create connection. Will retry in 10 milliseconds
+2022-05-06 09:47:44,409 DEBUG [io.ver.cor.net.imp.NetClientImpl] (vert.x-eventloop-thread-1) Failed to create connection. Will retry in 10 milliseconds
+2022-05-06 09:47:44,421 DEBUG [io.ver.cor.net.imp.NetClientImpl] (vert.x-eventloop-thread-1) Failed to create connection. Will retry in 10 milliseconds
+2022-05-06 09:47:44,434 DEBUG [io.ver.cor.net.imp.NetClientImpl] (vert.x-eventloop-thread-1) Failed to create connection. Will retry in 10 milliseconds
+2022-05-06 09:47:44,446 DEBUG [io.ver.cor.net.imp.NetClientImpl] (vert.x-eventloop-thread-1) Failed to create connection. Will retry in 10 milliseconds
+2022-05-06 09:47:44,459 DEBUG [io.ver.cor.net.imp.NetClientImpl] (vert.x-eventloop-thread-1) Failed to create connection. Will retry in 10 milliseconds
+2022-05-06 09:47:44,471 DEBUG [io.ver.cor.net.imp.NetClientImpl] (vert.x-eventloop-thread-1) Failed to create connection. Will retry in 10 milliseconds
+2022-05-06 09:47:44,485 DEBUG [io.ver.cor.net.imp.NetClientImpl] (vert.x-eventloop-thread-1) Failed to create connection. Will retry in 10 milliseconds
+2022-05-06 09:47:44,497 DEBUG [io.ver.cor.net.imp.NetClientImpl] (vert.x-eventloop-thread-1) Failed to create connection. Will retry in 10 milliseconds
+2022-05-06 09:47:44,515 DEBUG [io.ver.cor.net.imp.NetClientImpl] (vert.x-eventloop-thread-1) Failed to create connection. Will retry in 10 milliseconds
+2022-05-06 09:47:44,528 DEBUG [io.ver.cor.net.imp.NetClientImpl] (vert.x-eventloop-thread-1) Failed to create connection. Will retry in 10 milliseconds
+2022-05-06 09:47:44,544 DEBUG [io.ver.cor.net.imp.NetClientImpl] (vert.x-eventloop-thread-1) Failed to create connection. Will retry in 10 milliseconds
+2022-05-06 09:47:44,557 DEBUG [io.ver.cor.net.imp.NetClientImpl] (vert.x-eventloop-thread-1) Failed to create connection. Will retry in 10 milliseconds
+2022-05-06 09:47:44,569 DEBUG [io.ver.cor.net.imp.NetClientImpl] (vert.x-eventloop-thread-1) Failed to create connection. Will retry in 10 milliseconds
+2022-05-06 09:47:44,580 DEBUG [io.ver.cor.net.imp.NetClientImpl] (vert.x-eventloop-thread-1) Failed to create connection. Will retry in 10 milliseconds
+2022-05-06 09:47:44,593 DEBUG [io.ver.cor.net.imp.NetClientImpl] (vert.x-eventloop-thread-1) Failed to create connection. Will retry in 10 milliseconds
+2022-05-06 09:47:44,606 DEBUG [io.ver.cor.net.imp.NetClientImpl] (vert.x-eventloop-thread-1) Failed to create connection. Will retry in 10 milliseconds
+2022-05-06 09:47:44,618 DEBUG [io.ver.cor.net.imp.NetClientImpl] (vert.x-eventloop-thread-1) Failed to create connection. Will retry in 10 milliseconds
+2022-05-06 09:47:44,630 DEBUG [io.ver.cor.net.imp.NetClientImpl] (vert.x-eventloop-thread-1) Failed to create connection. Will retry in 10 milliseconds
+2022-05-06 09:47:44,644 DEBUG [io.ver.cor.net.imp.NetClientImpl] (vert.x-eventloop-thread-1) Failed to create connection. Will retry in 10 milliseconds
+2022-05-06 09:47:44,655 DEBUG [io.ver.cor.net.imp.NetClientImpl] (vert.x-eventloop-thread-1) Failed to create connection. Will retry in 10 milliseconds
+2022-05-06 09:47:44,668 DEBUG [io.ver.cor.net.imp.NetClientImpl] (vert.x-eventloop-thread-1) Failed to create connection. Will retry in 10 milliseconds
+2022-05-06 09:47:44,683 DEBUG [io.ver.cor.net.imp.NetClientImpl] (vert.x-eventloop-thread-1) Failed to create connection. Will retry in 10 milliseconds
+2022-05-06 09:47:44,697 DEBUG [io.ver.cor.net.imp.NetClientImpl] (vert.x-eventloop-thread-1) Failed to create connection. Will retry in 10 milliseconds
+2022-05-06 09:47:44,719 DEBUG [io.ver.cor.net.imp.NetClientImpl] (vert.x-eventloop-thread-1) Failed to create connection. Will retry in 10 milliseconds
+2022-05-06 09:47:44,733 DEBUG [io.ver.cor.net.imp.NetClientImpl] (vert.x-eventloop-thread-1) Failed to create connection. Will retry in 10 milliseconds
+2022-05-06 09:47:44,746 DEBUG [io.ver.cor.net.imp.NetClientImpl] (vert.x-eventloop-thread-1) Failed to create connection. Will retry in 10 milliseconds
+2022-05-06 09:47:44,759 DEBUG [io.ver.cor.net.imp.NetClientImpl] (vert.x-eventloop-thread-1) Failed to create connection. Will retry in 10 milliseconds
+2022-05-06 09:47:44,773 DEBUG [io.ver.cor.net.imp.NetClientImpl] (vert.x-eventloop-thread-1) Failed to create connection. Will retry in 10 milliseconds
+2022-05-06 09:47:44,785 DEBUG [io.ver.cor.net.imp.NetClientImpl] (vert.x-eventloop-thread-1) Failed to create connection. Will retry in 10 milliseconds
+2022-05-06 09:47:44,797 DEBUG [io.ver.cor.net.imp.NetClientImpl] (vert.x-eventloop-thread-1) Failed to create connection. Will retry in 10 milliseconds
+2022-05-06 09:47:44,809 DEBUG [io.ver.cor.net.imp.NetClientImpl] (vert.x-eventloop-thread-1) Failed to create connection. Will retry in 10 milliseconds
+2022-05-06 09:47:44,822 DEBUG [io.ver.cor.net.imp.NetClientImpl] (vert.x-eventloop-thread-1) Failed to create connection. Will retry in 10 milliseconds
+2022-05-06 09:47:44,836 DEBUG [io.ver.cor.net.imp.NetClientImpl] (vert.x-eventloop-thread-1) Failed to create connection. Will retry in 10 milliseconds
+2022-05-06 09:47:44,848 DEBUG [io.ver.cor.net.imp.NetClientImpl] (vert.x-eventloop-thread-1) Failed to create connection. Will retry in 10 milliseconds
+2022-05-06 09:47:44,862 DEBUG [io.ver.cor.net.imp.NetClientImpl] (vert.x-eventloop-thread-1) Failed to create connection. Will retry in 10 milliseconds
+2022-05-06 09:47:44,874 DEBUG [io.ver.cor.net.imp.NetClientImpl] (vert.x-eventloop-thread-1) Failed to create connection. Will retry in 10 milliseconds
+2022-05-06 09:47:44,886 DEBUG [io.ver.cor.net.imp.NetClientImpl] (vert.x-eventloop-thread-1) Failed to create connection. Will retry in 10 milliseconds
+2022-05-06 09:47:44,898 DEBUG [io.ver.cor.net.imp.NetClientImpl] (vert.x-eventloop-thread-1) Failed to create connection. Will retry in 10 milliseconds
+2022-05-06 09:47:44,911 DEBUG [io.ver.cor.net.imp.NetClientImpl] (vert.x-eventloop-thread-1) Failed to create connection. Will retry in 10 milliseconds
+2022-05-06 09:47:44,924 DEBUG [io.ver.cor.net.imp.NetClientImpl] (vert.x-eventloop-thread-1) Failed to create connection. Will retry in 10 milliseconds
+2022-05-06 09:47:44,937 DEBUG [io.ver.cor.net.imp.NetClientImpl] (vert.x-eventloop-thread-1) Failed to create connection. Will retry in 10 milliseconds
+2022-05-06 09:47:44,949 DEBUG [io.ver.cor.net.imp.NetClientImpl] (vert.x-eventloop-thread-1) Failed to create connection. Will retry in 10 milliseconds
+2022-05-06 09:47:44,961 DEBUG [io.ver.cor.net.imp.NetClientImpl] (vert.x-eventloop-thread-1) Failed to create connection. Will retry in 10 milliseconds
+2022-05-06 09:47:44,974 DEBUG [io.ver.cor.net.imp.NetClientImpl] (vert.x-eventloop-thread-1) Failed to create connection. Will retry in 10 milliseconds
+2022-05-06 09:47:44,986 DEBUG [io.ver.cor.net.imp.NetClientImpl] (vert.x-eventloop-thread-1) Failed to create connection. Will retry in 10 milliseconds
+2022-05-06 09:47:44,998 DEBUG [io.ver.cor.net.imp.NetClientImpl] (vert.x-eventloop-thread-1) Failed to create connection. Will retry in 10 milliseconds
+2022-05-06 09:47:45,009 DEBUG [io.ver.cor.net.imp.NetClientImpl] (vert.x-eventloop-thread-1) Failed to create connection. Will retry in 10 milliseconds
+2022-05-06 09:47:45,022 DEBUG [io.ver.cor.net.imp.NetClientImpl] (vert.x-eventloop-thread-1) Failed to create connection. Will retry in 10 milliseconds
+2022-05-06 09:47:45,034 DEBUG [io.ver.cor.net.imp.NetClientImpl] (vert.x-eventloop-thread-1) Failed to create connection. Will retry in 10 milliseconds
+2022-05-06 09:47:45,046 DEBUG [io.ver.cor.net.imp.NetClientImpl] (vert.x-eventloop-thread-1) Failed to create connection. Will retry in 10 milliseconds
+2022-05-06 09:47:45,058 DEBUG [io.ver.cor.net.imp.NetClientImpl] (vert.x-eventloop-thread-1) Failed to create connection. Will retry in 10 milliseconds
+2022-05-06 09:47:45,070 DEBUG [io.ver.cor.net.imp.NetClientImpl] (vert.x-eventloop-thread-1) Failed to create connection. Will retry in 10 milliseconds
+2022-05-06 09:47:45,083 DEBUG [io.ver.cor.net.imp.NetClientImpl] (vert.x-eventloop-thread-1) Failed to create connection. Will retry in 10 milliseconds
+2022-05-06 09:47:45,097 DEBUG [io.ver.cor.net.imp.NetClientImpl] (vert.x-eventloop-thread-1) Failed to create connection. Will retry in 10 milliseconds
+2022-05-06 09:47:45,109 DEBUG [io.ver.cor.net.imp.NetClientImpl] (vert.x-eventloop-thread-1) Failed to create connection. Will retry in 10 milliseconds
+2022-05-06 09:47:45,121 DEBUG [io.ver.cor.net.imp.NetClientImpl] (vert.x-eventloop-thread-1) Failed to create connection. Will retry in 10 milliseconds
+2022-05-06 09:47:45,134 DEBUG [io.ver.cor.net.imp.NetClientImpl] (vert.x-eventloop-thread-1) Failed to create connection. Will retry in 10 milliseconds
+2022-05-06 09:47:45,146 DEBUG [io.ver.cor.net.imp.NetClientImpl] (vert.x-eventloop-thread-1) Failed to create connection. Will retry in 10 milliseconds
+2022-05-06 09:47:45,158 DEBUG [io.ver.cor.net.imp.NetClientImpl] (vert.x-eventloop-thread-1) Failed to create connection. Will retry in 10 milliseconds
+2022-05-06 09:47:45,171 DEBUG [io.ver.cor.net.imp.NetClientImpl] (vert.x-eventloop-thread-1) Failed to create connection. Will retry in 10 milliseconds
+2022-05-06 09:47:45,183 DEBUG [io.ver.cor.net.imp.NetClientImpl] (vert.x-eventloop-thread-1) Failed to create connection. Will retry in 10 milliseconds
+2022-05-06 09:47:45,196 DEBUG [io.ver.cor.net.imp.NetClientImpl] (vert.x-eventloop-thread-1) Failed to create connection. Will retry in 10 milliseconds
+2022-05-06 09:47:45,208 DEBUG [io.ver.cor.net.imp.NetClientImpl] (vert.x-eventloop-thread-1) Failed to create connection. Will retry in 10 milliseconds
+2022-05-06 09:47:45,220 DEBUG [io.ver.cor.net.imp.NetClientImpl] (vert.x-eventloop-thread-1) Failed to create connection. Will retry in 10 milliseconds
+2022-05-06 09:47:45,233 DEBUG [io.ver.cor.net.imp.NetClientImpl] (vert.x-eventloop-thread-1) Failed to create connection. Will retry in 10 milliseconds
+2022-05-06 09:47:45,245 DEBUG [io.ver.cor.net.imp.NetClientImpl] (vert.x-eventloop-thread-1) Failed to create connection. Will retry in 10 milliseconds
+2022-05-06 09:47:45,258 DEBUG [io.ver.cor.net.imp.NetClientImpl] (vert.x-eventloop-thread-1) Failed to create connection. Will retry in 10 milliseconds
+2022-05-06 09:47:45,270 DEBUG [io.ver.cor.net.imp.NetClientImpl] (vert.x-eventloop-thread-1) Failed to create connection. Will retry in 10 milliseconds
+2022-05-06 09:47:45,282 DEBUG [io.ver.cor.net.imp.NetClientImpl] (vert.x-eventloop-thread-1) Failed to create connection. Will retry in 10 milliseconds
+2022-05-06 09:47:45,294 DEBUG [io.ver.cor.net.imp.NetClientImpl] (vert.x-eventloop-thread-1) Failed to create connection. Will retry in 10 milliseconds
+2022-05-06 09:47:45,306 DEBUG [io.ver.cor.net.imp.NetClientImpl] (vert.x-eventloop-thread-1) Failed to create connection. Will retry in 10 milliseconds
+2022-05-06 09:47:45,318 DEBUG [io.ver.cor.net.imp.NetClientImpl] (vert.x-eventloop-thread-1) Failed to create connection. Will retry in 10 milliseconds
+2022-05-06 09:47:45,331 DEBUG [io.ver.cor.net.imp.NetClientImpl] (vert.x-eventloop-thread-1) Failed to create connection. Will retry in 10 milliseconds
+2022-05-06 09:47:45,345 DEBUG [io.ver.cor.net.imp.NetClientImpl] (vert.x-eventloop-thread-1) Failed to create connection. Will retry in 10 milliseconds
+2022-05-06 09:47:45,357 DEBUG [io.ver.cor.net.imp.NetClientImpl] (vert.x-eventloop-thread-1) Failed to create connection. Will retry in 10 milliseconds
+2022-05-06 09:47:45,370 DEBUG [io.ver.cor.net.imp.NetClientImpl] (vert.x-eventloop-thread-1) Failed to create connection. Will retry in 10 milliseconds
+2022-05-06 09:47:45,381 DEBUG [io.ver.cor.net.imp.NetClientImpl] (vert.x-eventloop-thread-1) Failed to create connection. Will retry in 10 milliseconds
+2022-05-06 09:47:45,393 DEBUG [io.ver.cor.net.imp.NetClientImpl] (vert.x-eventloop-thread-1) Failed to create connection. Will retry in 10 milliseconds
+2022-05-06 09:47:45,406 DEBUG [io.ver.cor.net.imp.NetClientImpl] (vert.x-eventloop-thread-1) Failed to create connection. Will retry in 10 milliseconds
+2022-05-06 09:47:45,423 DEBUG [io.ver.cor.net.imp.NetClientImpl] (vert.x-eventloop-thread-1) Failed to create connection. Will retry in 10 milliseconds
+2022-05-06 09:47:45,438 DEBUG [io.ver.cor.net.imp.NetClientImpl] (vert.x-eventloop-thread-1) Failed to create connection. Will retry in 10 milliseconds
+2022-05-06 09:47:45,452 DEBUG [io.ver.cor.net.imp.NetClientImpl] (vert.x-eventloop-thread-1) Failed to create connection. Will retry in 10 milliseconds
+2022-05-06 09:47:45,466 DEBUG [io.ver.cor.net.imp.NetClientImpl] (vert.x-eventloop-thread-1) Failed to create connection. Will retry in 10 milliseconds
+2022-05-06 09:47:45,478 DEBUG [io.ver.cor.net.imp.NetClientImpl] (vert.x-eventloop-thread-1) Failed to create connection. Will retry in 10 milliseconds
+2022-05-06 09:47:45,490 DEBUG [io.ver.cor.net.imp.NetClientImpl] (vert.x-eventloop-thread-1) Failed to create connection. Will retry in 10 milliseconds
+2022-05-06 09:47:45,502 DEBUG [io.ver.cor.net.imp.NetClientImpl] (vert.x-eventloop-thread-1) Failed to create connection. Will retry in 10 milliseconds
+2022-05-06 09:47:45,514 DEBUG [io.ver.cor.net.imp.NetClientImpl] (vert.x-eventloop-thread-1) Failed to create connection. Will retry in 10 milliseconds
+2022-05-06 09:47:45,530 DEBUG [io.ver.cor.net.imp.NetClientImpl] (vert.x-eventloop-thread-1) Failed to create connection. Will retry in 10 milliseconds
+2022-05-06 09:47:45,542 DEBUG [io.ver.cor.net.imp.NetClientImpl] (vert.x-eventloop-thread-1) Failed to create connection. Will retry in 10 milliseconds
+2022-05-06 09:47:45,553 DEBUG [io.ver.cor.net.imp.NetClientImpl] (vert.x-eventloop-thread-1) Failed to create connection. Will retry in 10 milliseconds
+2022-05-06 09:47:45,565 DEBUG [io.ver.cor.net.imp.NetClientImpl] (vert.x-eventloop-thread-1) Failed to create connection. Will retry in 10 milliseconds
+2022-05-06 09:47:45,578 DEBUG [io.ver.cor.net.imp.NetClientImpl] (vert.x-eventloop-thread-1) Failed to create connection. Will retry in 10 milliseconds
+2022-05-06 09:47:45,590 DEBUG [io.ver.cor.net.imp.NetClientImpl] (vert.x-eventloop-thread-1) Failed to create connection. Will retry in 10 milliseconds
+2022-05-06 09:47:45,604 DEBUG [io.ver.cor.net.imp.NetClientImpl] (vert.x-eventloop-thread-1) Failed to create connection. Will retry in 10 milliseconds
+2022-05-06 09:47:45,616 DEBUG [io.ver.cor.net.imp.NetClientImpl] (vert.x-eventloop-thread-1) Failed to create connection. Will retry in 10 milliseconds
+2022-05-06 09:47:45,629 DEBUG [io.ver.cor.net.imp.NetClientImpl] (vert.x-eventloop-thread-1) Failed to create connection. Will retry in 10 milliseconds
+2022-05-06 09:47:45,641 DEBUG [io.ver.cor.net.imp.NetClientImpl] (vert.x-eventloop-thread-1) Failed to create connection. Will retry in 10 milliseconds
+2022-05-06 09:47:45,655 ERROR [io.sma.rea.mes.amqp] (vert.x-eventloop-thread-1) SRMSG16215: Unable to connect to the broker, retry will be attempted: io.netty.channel.AbstractChannel$AnnotatedConnectException: Connection refused: artemis-cluster-hdls-svc/10.125.4.221:61616
+Caused by: java.net.ConnectException: Connection refused
+	at java.base/sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:777)
+	at io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:330)
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:334)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:710)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:658)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:584)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:496)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:986)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+
+2022-05-06 09:47:47,136 INFO  [io.sma.rea.mes.amqp] (executor-thread-0) SRMSG16212: Establishing connection with AMQP broker
+2022-05-06 09:47:47,140 DEBUG [io.ver.cor.net.imp.NetClientImpl] (vert.x-eventloop-thread-1) Failed to create connection. Will retry in 10 milliseconds
+2022-05-06 09:47:47,152 DEBUG [io.ver.cor.net.imp.NetClientImpl] (vert.x-eventloop-thread-1) Failed to create connection. Will retry in 10 milliseconds
+2022-05-06 09:47:47,165 DEBUG [io.ver.cor.net.imp.NetClientImpl] (vert.x-eventloop-thread-1) Failed to create connection. Will retry in 10 milliseconds
+2022-05-06 09:47:47,178 DEBUG [io.ver.cor.net.imp.NetClientImpl] (vert.x-eventloop-thread-1) Failed to create connection. Will retry in 10 milliseconds
+2022-05-06 09:47:47,192 DEBUG [io.ver.cor.net.imp.NetClientImpl] (vert.x-eventloop-thread-1) Failed to create connection. Will retry in 10 milliseconds
+2022-05-06 09:47:47,204 DEBUG [io.ver.cor.net.imp.NetClientImpl] (vert.x-eventloop-thread-1) Failed to create connection. Will retry in 10 milliseconds
+2022-05-06 09:47:47,218 DEBUG [io.ver.cor.net.imp.NetClientImpl] (vert.x-eventloop-thread-1) Failed to create connection. Will retry in 10 milliseconds
+2022-05-06 09:47:47,234 DEBUG [io.ver.cor.net.imp.NetClientImpl] (vert.x-eventloop-thread-1) Failed to create connection. Will retry in 10 milliseconds
+2022-05-06 09:47:47,246 DEBUG [io.ver.cor.net.imp.NetClientImpl] (vert.x-eventloop-thread-1) Failed to create connection. Will retry in 10 milliseconds
+2022-05-06 09:47:48,260 DEBUG [io.ver.cor.net.imp.NetClientImpl] (vert.x-eventloop-thread-1) Failed to create connection. Will retry in 10 milliseconds
+2022-05-06 09:47:49,276 DEBUG [io.ver.cor.net.imp.NetClientImpl] (vert.x-eventloop-thread-1) Failed to create connection. Will retry in 10 milliseconds
+2022-05-06 09:47:50,291 DEBUG [io.ver.cor.net.imp.NetClientImpl] (vert.x-eventloop-thread-1) Failed to create connection. Will retry in 10 milliseconds
+2022-05-06 09:47:51,307 DEBUG [io.ver.cor.net.imp.NetClientImpl] (vert.x-eventloop-thread-1) Failed to create connection. Will retry in 10 milliseconds
+2022-05-06 09:47:52,320 DEBUG [io.ver.cor.net.imp.NetClientImpl] (vert.x-eventloop-thread-1) Failed to create connection. Will retry in 10 milliseconds
+2022-05-06 09:47:53,333 DEBUG [io.ver.cor.net.imp.NetClientImpl] (vert.x-eventloop-thread-1) Failed to create connection. Will retry in 10 milliseconds
+2022-05-06 09:47:54,347 DEBUG [io.ver.cor.net.imp.NetClientImpl] (vert.x-eventloop-thread-1) Failed to create connection. Will retry in 10 milliseconds
+2022-05-06 09:47:55,361 DEBUG [io.ver.cor.net.imp.NetClientImpl] (vert.x-eventloop-thread-1) Failed to create connection. Will retry in 10 milliseconds
+2022-05-06 09:47:56,375 DEBUG [io.ver.cor.net.imp.NetClientImpl] (vert.x-eventloop-thread-1) Failed to create connection. Will retry in 10 milliseconds
+2022-05-06 09:47:57,387 DEBUG [io.ver.cor.net.imp.NetClientImpl] (vert.x-eventloop-thread-1) Failed to create connection. Will retry in 10 milliseconds
+2022-05-06 09:47:58,423 DEBUG [io.ver.cor.net.imp.NetClientImpl] (vert.x-eventloop-thread-1) Failed to create connection. Will retry in 10 milliseconds
+2022-05-06 09:47:59,437 DEBUG [io.ver.cor.net.imp.NetClientImpl] (vert.x-eventloop-thread-1) Failed to create connection. Will retry in 10 milliseconds
+2022-05-06 09:48:00,449 DEBUG [io.ver.cor.net.imp.NetClientImpl] (vert.x-eventloop-thread-1) Failed to create connection. Will retry in 10 milliseconds
+2022-05-06 09:48:01,464 DEBUG [io.ver.cor.net.imp.NetClientImpl] (vert.x-eventloop-thread-1) Failed to create connection. Will retry in 10 milliseconds
+2022-05-06 09:48:02,477 DEBUG [io.ver.cor.net.imp.NetClientImpl] (vert.x-eventloop-thread-1) Failed to create connection. Will retry in 10 milliseconds
+2022-05-06 09:48:03,492 DEBUG [io.ver.cor.net.imp.NetClientImpl] (vert.x-eventloop-thread-1) Failed to create connection. Will retry in 10 milliseconds
+2022-05-06 09:48:04,505 DEBUG [io.ver.cor.net.imp.NetClientImpl] (vert.x-eventloop-thread-1) Failed to create connection. Will retry in 10 milliseconds
+2022-05-06 09:48:05,519 DEBUG [io.ver.cor.net.imp.NetClientImpl] (vert.x-eventloop-thread-1) Failed to create connection. Will retry in 10 milliseconds
+2022-05-06 09:48:06,531 DEBUG [io.ver.cor.net.imp.NetClientImpl] (vert.x-eventloop-thread-1) Failed to create connection. Will retry in 10 milliseconds
+2022-05-06 09:48:07,544 DEBUG [io.ver.cor.net.imp.NetClientImpl] (vert.x-eventloop-thread-1) Failed to create connection. Will retry in 10 milliseconds
+2022-05-06 09:48:08,558 DEBUG [io.ver.cor.net.imp.NetClientImpl] (vert.x-eventloop-thread-1) Failed to create connection. Will retry in 10 milliseconds
+2022-05-06 09:48:09,571 DEBUG [io.ver.cor.net.imp.NetClientImpl] (vert.x-eventloop-thread-1) Failed to create connection. Will retry in 10 milliseconds
+2022-05-06 09:48:10,584 DEBUG [io.ver.cor.net.imp.NetClientImpl] (vert.x-eventloop-thread-1) Failed to create connection. Will retry in 10 milliseconds
+2022-05-06 09:48:11,598 DEBUG [io.ver.cor.net.imp.NetClientImpl] (vert.x-eventloop-thread-1) Failed to create connection. Will retry in 10 milliseconds
+2022-05-06 09:48:12,612 DEBUG [io.ver.cor.net.imp.NetClientImpl] (vert.x-eventloop-thread-1) Failed to create connection. Will retry in 10 milliseconds
+2022-05-06 09:48:13,625 DEBUG [io.ver.cor.net.imp.NetClientImpl] (vert.x-eventloop-thread-1) Failed to create connection. Will retry in 10 milliseconds
+2022-05-06 09:48:14,638 DEBUG [io.ver.cor.net.imp.NetClientImpl] (vert.x-eventloop-thread-1) Failed to create connection. Will retry in 10 milliseconds
+2022-05-06 09:48:14,661 FINE  [org.apa.qpi.pro.eng.imp.SaslImpl] (vert.x-eventloop-thread-1) Handled outcome: SaslImpl [_outcome=PN_SASL_OK, state=PN_SASL_PASS, done=true, role=CLIENT]
+2022-05-06 09:48:14,664 FINE  [pro.trace] (vert.x-eventloop-thread-1) IN: CH[0] : Open{ containerId='amq-broker', hostname='null', maxFrameSize=131072, channelMax=65535, idleTimeOut=30000, outgoingLocales=null, incomingLocales=null, offeredCapabilities=[sole-connection-for-container, DELAYED_DELIVERY, SHARED-SUBS, ANONYMOUS-RELAY], desiredCapabilities=null, properties={product=apache-activemq-artemis, version=2.18.0.redhat-00021}}
+2022-05-06 09:48:14,666 INFO  [io.sma.rea.mes.amqp] (vert.x-eventloop-thread-1) SRMSG16213: Connection with AMQP broker established
+2022-05-06 09:48:14,695 FINE  [pro.trace] (vert.x-eventloop-thread-1) IN: CH[0] : Begin{remoteChannel=0, nextOutgoingId=1, incomingWindow=2147483647, outgoingWindow=2147483647, handleMax=65535, offeredCapabilities=null, desiredCapabilities=null, properties=null}
+2022-05-06 09:48:14,695 FINE  [pro.trace] (vert.x-eventloop-thread-1) IN: CH[0] : Attach{name='words-in', handle=0, role=SENDER, sndSettleMode=UNSETTLED, rcvSettleMode=FIRST, source=Source{address='words', durable=NONE, expiryPolicy=SESSION_END, timeout=0, dynamic=false, dynamicNodeProperties=null, distributionMode=null, filter=null, defaultOutcome=Released{}, outcomes=[amqp:accepted:list, amqp:rejected:list, amqp:released:list, amqp:modified:list], capabilities=null}, target=Target{address='null', durable=NONE, expiryPolicy=SESSION_END, timeout=0, dynamic=false, dynamicNodeProperties=null, capabilities=null}, unsettled=null, incompleteUnsettled=false, initialDeliveryCount=0, maxMessageSize=null, offeredCapabilities=null, desiredCapabilities=null, properties=null}
+2022-05-06 09:48:14,696 INFO  [io.sma.rea.mes.amqp] (vert.x-eventloop-thread-1) SRMSG16203: AMQP Receiver listening address words
+2022-05-06 09:48:14,708 FINE  [pro.trace] (vert.x-eventloop-thread-1) IN: CH[0] : Transfer{handle=0, deliveryId=0, deliveryTag=\x00, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #246]
+2022-05-06 09:48:14,708 FINE  [pro.trace] (vert.x-eventloop-thread-1) IN: CH[0] : Transfer{handle=0, deliveryId=1, deliveryTag=\x01, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #248]
+2022-05-06 09:48:14,709 FINE  [pro.trace] (vert.x-eventloop-thread-1) IN: CH[0] : Transfer{handle=0, deliveryId=2, deliveryTag=\x02, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #245]
+2022-05-06 09:48:14,709 FINE  [pro.trace] (vert.x-eventloop-thread-1) IN: CH[0] : Transfer{handle=0, deliveryId=3, deliveryTag=\x03, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #251]
+2022-05-06 09:48:14,709 FINE  [pro.trace] (vert.x-eventloop-thread-1) IN: CH[0] : Transfer{handle=0, deliveryId=4, deliveryTag=\x04, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #250]
+2022-05-06 09:48:14,709 FINE  [pro.trace] (vert.x-eventloop-thread-1) IN: CH[0] : Transfer{handle=0, deliveryId=5, deliveryTag=\x05, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #249]
+2022-05-06 09:48:14,709 FINE  [pro.trace] (vert.x-eventloop-thread-1) IN: CH[0] : Transfer{handle=0, deliveryId=6, deliveryTag=\x06, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #247]
+2022-05-06 09:48:14,710 FINE  [pro.trace] (vert.x-eventloop-thread-1) IN: CH[0] : Transfer{handle=0, deliveryId=7, deliveryTag=\x07, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #244]
+2022-05-06 09:48:14,710 FINE  [pro.trace] (vert.x-eventloop-thread-1) IN: CH[0] : Transfer{handle=0, deliveryId=8, deliveryTag=\x08, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #242]
+2022-05-06 09:48:14,717 FINE  [pro.trace] (vert.x-eventloop-thread-1) IN: CH[0] : Transfer{handle=0, deliveryId=9, deliveryTag=\x09, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #243]
+2022-05-06 09:48:14,717 FINE  [pro.trace] (vert.x-eventloop-thread-1) IN: CH[0] : Transfer{handle=0, deliveryId=10, deliveryTag=\x0a, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #240]
+2022-05-06 09:48:14,717 FINE  [pro.trace] (vert.x-eventloop-thread-1) IN: CH[0] : Transfer{handle=0, deliveryId=11, deliveryTag=\x0b, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #239]
+2022-05-06 09:48:14,718 FINE  [pro.trace] (vert.x-eventloop-thread-1) IN: CH[0] : Transfer{handle=0, deliveryId=12, deliveryTag=\x0c, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #241]
+2022-05-06 09:48:14,718 FINE  [pro.trace] (vert.x-eventloop-thread-1) IN: CH[0] : Transfer{handle=0, deliveryId=13, deliveryTag=\x0d, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #237]
+1: #246
+1: #248
+1: #245
+1: #251
+1: #250
+1: #249
+1: #247
+1: #244
+1: #242
+1: #243
+1: #240
+1: #239
+1: #241
+1: #237
+2022-05-06 09:48:15,012 FINE  [pro.trace] (vert.x-eventloop-thread-1) IN: CH[0] : Transfer{handle=0, deliveryId=14, deliveryTag=\x00, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #238]
+1: #238
+2022-05-06 09:48:15,055 FINE  [pro.trace] (vert.x-eventloop-thread-1) IN: CH[0] : Transfer{handle=0, deliveryId=15, deliveryTag=\x01, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #252]
+1: #252
+2022-05-06 09:48:16,016 FINE  [pro.trace] (vert.x-eventloop-thread-1) IN: CH[0] : Transfer{handle=0, deliveryId=16, deliveryTag=\x02, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #253]
+1: #253
+2022-05-06 09:48:18,019 FINE  [pro.trace] (vert.x-eventloop-thread-1) IN: CH[0] : Transfer{handle=0, deliveryId=17, deliveryTag=\x03, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #254]
+1: #254
+2022-05-06 09:48:20,017 FINE  [pro.trace] (vert.x-eventloop-thread-1) IN: CH[0] : Transfer{handle=0, deliveryId=18, deliveryTag=\x04, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #255]
+1: #255
+2022-05-06 09:48:22,023 FINE  [pro.trace] (vert.x-eventloop-thread-1) IN: CH[0] : Transfer{handle=0, deliveryId=19, deliveryTag=\x05, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #256]
+1: #256
+2022-05-06 09:48:24,014 FINE  [pro.trace] (vert.x-eventloop-thread-1) IN: CH[0] : Transfer{handle=0, deliveryId=20, deliveryTag=\x06, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #257]
+1: #257
+2022-05-06 09:48:26,015 FINE  [pro.trace] (vert.x-eventloop-thread-1) IN: CH[0] : Transfer{handle=0, deliveryId=21, deliveryTag=\x07, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #258]
+1: #258
+2022-05-06 09:48:28,016 FINE  [pro.trace] (vert.x-eventloop-thread-1) IN: CH[0] : Transfer{handle=0, deliveryId=22, deliveryTag=\x08, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #259]
+1: #259
+2022-05-06 09:48:30,014 FINE  [pro.trace] (vert.x-eventloop-thread-1) IN: CH[0] : Transfer{handle=0, deliveryId=23, deliveryTag=\x09, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #260]
+1: #260
+2022-05-06 09:48:32,018 FINE  [pro.trace] (vert.x-eventloop-thread-1) IN: CH[0] : Transfer{handle=0, deliveryId=24, deliveryTag=\x0a, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #261]
+1: #261
+2022-05-06 09:48:34,015 FINE  [pro.trace] (vert.x-eventloop-thread-1) IN: CH[0] : Transfer{handle=0, deliveryId=25, deliveryTag=\x0b, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #262]
+1: #262
+2022-05-06 09:48:36,018 FINE  [pro.trace] (vert.x-eventloop-thread-1) IN: CH[0] : Transfer{handle=0, deliveryId=26, deliveryTag=\x0c, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #263]
+1: #263
+2022-05-06 09:48:38,016 FINE  [pro.trace] (vert.x-eventloop-thread-1) IN: CH[0] : Transfer{handle=0, deliveryId=27, deliveryTag=\x0d, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #264]
+1: #264
+2022-05-06 09:48:40,020 FINE  [pro.trace] (vert.x-eventloop-thread-1) IN: CH[0] : Transfer{handle=0, deliveryId=28, deliveryTag=\x00, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #265]
+1: #265
+2022-05-06 09:48:42,017 FINE  [pro.trace] (vert.x-eventloop-thread-1) IN: CH[0] : Transfer{handle=0, deliveryId=29, deliveryTag=\x01, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #266]
+1: #266
+2022-05-06 09:48:44,016 FINE  [pro.trace] (vert.x-eventloop-thread-1) IN: CH[0] : Transfer{handle=0, deliveryId=30, deliveryTag=\x02, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #267]
+1: #267
+2022-05-06 09:48:46,024 FINE  [pro.trace] (vert.x-eventloop-thread-1) IN: CH[0] : Transfer{handle=0, deliveryId=31, deliveryTag=\x03, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #268]
+1: #268
+2022-05-06 09:48:48,020 FINE  [pro.trace] (vert.x-eventloop-thread-1) IN: CH[0] : Transfer{handle=0, deliveryId=32, deliveryTag=\x04, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #269]
+1: #269
+2022-05-06 09:48:50,014 FINE  [pro.trace] (vert.x-eventloop-thread-1) IN: CH[0] : Transfer{handle=0, deliveryId=33, deliveryTag=\x05, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #270]
+1: #270
+2022-05-06 09:48:52,014 FINE  [pro.trace] (vert.x-eventloop-thread-1) IN: CH[0] : Transfer{handle=0, deliveryId=34, deliveryTag=\x06, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #271]
+1: #271
+2022-05-06 09:48:54,019 FINE  [pro.trace] (vert.x-eventloop-thread-1) IN: CH[0] : Transfer{handle=0, deliveryId=35, deliveryTag=\x07, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #272]
+1: #272
+2022-05-06 09:48:56,016 FINE  [pro.trace] (vert.x-eventloop-thread-1) IN: CH[0] : Transfer{handle=0, deliveryId=36, deliveryTag=\x08, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #273]
+1: #273
+2022-05-06 09:48:58,014 FINE  [pro.trace] (vert.x-eventloop-thread-1) IN: CH[0] : Transfer{handle=0, deliveryId=37, deliveryTag=\x09, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #274]
+1: #274
+2022-05-06 09:49:00,014 FINE  [pro.trace] (vert.x-eventloop-thread-1) IN: CH[0] : Transfer{handle=0, deliveryId=38, deliveryTag=\x0a, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #275]
+1: #275
+2022-05-06 09:49:02,014 FINE  [pro.trace] (vert.x-eventloop-thread-1) IN: CH[0] : Transfer{handle=0, deliveryId=39, deliveryTag=\x0b, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #276]
+1: #276
+2022-05-06 09:49:04,013 FINE  [pro.trace] (vert.x-eventloop-thread-1) IN: CH[0] : Transfer{handle=0, deliveryId=40, deliveryTag=\x0c, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #277]
+1: #277
+2022-05-06 09:49:06,014 FINE  [pro.trace] (vert.x-eventloop-thread-1) IN: CH[0] : Transfer{handle=0, deliveryId=41, deliveryTag=\x0d, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #278]
+1: #278
+2022-05-06 09:49:08,014 FINE  [pro.trace] (vert.x-eventloop-thread-1) IN: CH[0] : Transfer{handle=0, deliveryId=42, deliveryTag=\x00, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #279]
+1: #279
+2022-05-06 09:49:10,015 FINE  [pro.trace] (vert.x-eventloop-thread-1) IN: CH[0] : Transfer{handle=0, deliveryId=43, deliveryTag=\x01, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #280]
+1: #280
+2022-05-06 09:49:12,015 FINE  [pro.trace] (vert.x-eventloop-thread-1) IN: CH[0] : Transfer{handle=0, deliveryId=44, deliveryTag=\x02, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #281]
+1: #281
+2022-05-06 09:49:14,014 FINE  [pro.trace] (vert.x-eventloop-thread-1) IN: CH[0] : Transfer{handle=0, deliveryId=45, deliveryTag=\x03, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #282]
+1: #282
+2022-05-06 09:49:16,016 FINE  [pro.trace] (vert.x-eventloop-thread-1) IN: CH[0] : Transfer{handle=0, deliveryId=46, deliveryTag=\x04, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #283]
+1: #283
+2022-05-06 09:49:18,018 FINE  [pro.trace] (vert.x-eventloop-thread-1) IN: CH[0] : Transfer{handle=0, deliveryId=47, deliveryTag=\x05, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #284]
+1: #284
+2022-05-06 09:49:20,014 FINE  [pro.trace] (vert.x-eventloop-thread-1) IN: CH[0] : Transfer{handle=0, deliveryId=48, deliveryTag=\x06, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #285]
+1: #285
+2022-05-06 09:49:22,024 FINE  [pro.trace] (vert.x-eventloop-thread-1) IN: CH[0] : Transfer{handle=0, deliveryId=49, deliveryTag=\x07, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #286]
+1: #286
+2022-05-06 09:49:24,031 FINE  [pro.trace] (vert.x-eventloop-thread-1) IN: CH[0] : Transfer{handle=0, deliveryId=50, deliveryTag=\x08, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #287]
+1: #287
+2022-05-06 09:49:26,016 FINE  [pro.trace] (vert.x-eventloop-thread-1) IN: CH[0] : Transfer{handle=0, deliveryId=51, deliveryTag=\x09, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #288]
+1: #288
+2022-05-06 09:49:28,015 FINE  [pro.trace] (vert.x-eventloop-thread-1) IN: CH[0] : Transfer{handle=0, deliveryId=52, deliveryTag=\x0a, messageFormat=0, settled=false, more=false, rcvSettleMode=null, state=null, resume=false, aborted=false, batchable=false}[\x00Ss\xd0\x00\x00\x00\x0d\x00\x00\x00\x03@@\xa1\x05words\x00Sw\xa1\x071: #289]
+1: #289
