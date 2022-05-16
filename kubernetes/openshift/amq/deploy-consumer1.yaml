@@ -21,19 +21,13 @@ spec:
             - name: QUARKUS_LOG_LEVEL
               value: INFO
             - name: AMQP_HOST
-              value: artemis-cluster-hdls-svc
+              value: amqbroker-amq-broker-hdls-svc
             - name: AMQP_PORT
               value: "61616"
             - name: AMQP_USERNAME
-              valueFrom:
-                secretKeyRef:
-                  key: AMQ_CLUSTER_USER
-                  name: artemis-cluster-credentials-secret
-            - name: AMQP_PASSSWORD
-              valueFrom:
-                secretKeyRef:
-                  key: AMQ_CLUSTER_PASSWORD
-                  name: artemis-cluster-credentials-secret
+              value: amqsender
+            - name: AMQP_PASSWORD
+              value: changeme
           image: docker.io/g1raffi/amqp-consumer:latest
           imagePullPolicy: Always
           name: amqp-consumer
