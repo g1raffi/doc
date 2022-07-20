@@ -1,8 +1,8 @@
 # Java
 
-## Quarkus: 
+## Quarkus
 
-### Periodically triggered messages with AMQP
+### Periodically triggered messages
 
 ```java
     @ConfigProperty(name = "application.polling.interval-seconds", defaultValue
