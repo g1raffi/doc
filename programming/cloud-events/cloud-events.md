@@ -4,12 +4,14 @@
 
 [CNCF](https://www.cncf.io/projects/cloudevents/) Incubating project since 2018.
 
+![Quarkus](img/quarkus.png)
+![CloudEvents](img/cloudevents.png)
 
 ## Summary
 
-Standardization is a general need in all fields after some technique is widely used. In the last few years the trend for scalable, event-driven systems grew massively. Everybody and everything was communicating with events. And all systems face the same question at some point - what should our events look like. If you were smart enough you asked the question rather earlier than later. If not, at some point you will face the truth that you will have to refactor a lot to achieve consistency in your events throughout the distributed system. This is where you would have wished to know CloudEvents already.
+Standardization is a general need in all fields after some technique is widely used. In the last few years the trend for scalable, event-driven systems grew massively. Everybody and everything is communicating in events. And all systems face the same question at some point - what should our events look like. If you were smart enough you asked the question rather earlier than later. If not, at some point you will face the truth that you will have to refactor a lot to achieve consistency in your events throughout your distributed system. This is where you would have wished to know CloudEvents already.
 
-CloudEvents brings a specification to describe events in a common way. It increases consistency, accessibility and portability in distributed systems. Major programming languages like Java, Go, JavaScript, Ruby, Rust, Python have SDKs and APIs to implement CloudEvents in a simple way. At it's core it will bring us a blueprint or language to define a set of metadata to describe the event.
+CloudEvents brings a specification to describe events in a common way. The common language increases consistency, accessibility and portability in distributed systems. Major programming languages like Java, Go, JavaScript, Ruby, Rust, Python have SDKs and APIs to implement CloudEvents in a simple way. At it's core it will bring us a blueprint or language to define a set of metadata to describe the event.
 
 What do they look like?
 
@@ -49,6 +51,8 @@ attribute | type | description
 datacontenttype | String [RFC 2046](https://datatracker.ietf.org/doc/html/rfc2046) | Content type of data value
 subject | String | This describes the subject of the event in the context of the event producer (identified by source). In publish-subscribe scenarios, a subscriber will typically subscribe to events emitted by a source
 time | Timestamp [RFC 3339](https://datatracker.ietf.org/doc/html/rfc3339) | Timestamp of when the occurrence happened
+
+In addition to the specification of CloudEvents itself, there are extensions giving extra flexibility for other meta fields to enrich your event. For example OpenTracing header fields can be added by the [Distributed Tracing](https://github.com/cloudevents/spec/blob/main/cloudevents/extensions/distributed-tracing.md) extension.
 
 
 ## Implementation
@@ -246,7 +250,7 @@ The data-consumer's side of the system looks quite similar. Create a Avro schema
 
 Instead of producing messages, we will simply define a listener on a channel connected to the same Kafka topic and print the events to the command line!
 
-Create the EventListener `org.acme.EventListener`: 
+Create the EventListener `org.acme.EventListener`:
 
 ```java
 
@@ -320,3 +324,7 @@ $ curl -X POST localhost:8080/measurements
 
 
 ```
+
+## Recap
+
+With the CloudEvents standard you can increase consistency, accessibility and portability of your microservice architecture. You can save time discussing what events should look like and increase efficiency by simply implementing your events and get stuff done!
