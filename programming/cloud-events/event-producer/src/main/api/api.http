@@ -1,0 +1,11 @@
+POST http://localhost:8080/hello
+Content-Type: application/json
+
+{
+  "message": "hello another topic",
+  "topic": "events"
+}
+
+###
+
+POST http://localhost:8080/measurements

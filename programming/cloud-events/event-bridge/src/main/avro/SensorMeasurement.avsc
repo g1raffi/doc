@@ -1,0 +1,11 @@
+{
+  "namespace": "org.acme",
+  "type": "record",
+  "name": "SensorMeasurement",
+  "fields": [
+    {
+      "name": "data",
+      "type": "double"
+    }
+  ]
+}
