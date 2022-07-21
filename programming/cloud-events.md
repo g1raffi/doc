@@ -4,6 +4,7 @@
 
 [CNCF](https://www.cncf.io/projects/cloudevents/) Incubating project since 2018.
 
+
 ## Summary
 
 Standardization is a general need in all fields after some technique is widely used. In the last few years the trend for scalable, event-driven systems grew massively. Everybody and everything was communicating with events. And all systems face the same question at some point - what should our events look like. If you were smart enough you asked the question rather earlier than later. If not, at some point you will face the truth that you will have to refactor a lot to achieve consistency in your events throughout the distributed system. This is where you would have wished to know CloudEvents already.
@@ -26,6 +27,29 @@ What do they look like?
     "data" : "<much wow=\"xml\"/>"
 }
 ```
+
+
+## Specification
+
+It all comes down to a handful attributes:
+
+**Required attributes:**
+
+attribute | type | description
+---|---|---
+id | String | Identifies the event (e.g. UUID)
+source | URI-reference | Identifies the context in which an event happened
+specversion | String | Version of the CloudEvents specification which the event uses
+type | String | Describes the type of event related to the originating occurrence
+
+**Optional attributes:**
+
+attribute | type | description
+---|---|---
+datacontenttype | String [RFC 2046](https://datatracker.ietf.org/doc/html/rfc2046) | Content type of data value
+subject | String | This describes the subject of the event in the context of the event producer (identified by source). In publish-subscribe scenarios, a subscriber will typically subscribe to events emitted by a source
+time | Timestamp [RFC 3339](https://datatracker.ietf.org/doc/html/rfc3339) | Timestamp of when the occurrence happened
+
 
 ## Implementation
 
@@ -296,25 +320,3 @@ $ curl -X POST localhost:8080/measurements
 
 
 ```
-
-
-## Specification
-
-It all comes down to a handful attributes:
-
-**Required attributes:**
-
-attribute | type | description
----|---|---
-id | String | Identifies the event (e.g. UUID)
-source | URI-reference | Identifies the context in which an event happened
-specversion | String | Version of the CloudEvents specification which the event uses
-type | String | Describes the type of event related to the originating occurrence
-
-**Optional attributes:**
-
-attribute | type | description
----|---|---
-datacontenttype | String [RFC 2046](https://datatracker.ietf.org/doc/html/rfc2046) | Content type of data value
-subject | String | This describes the subject of the event in the context of the event producer (identified by source). In publish-subscribe scenarios, a subscriber will typically subscribe to events emitted by a source
-time | Timestamp [RFC 3339](https://datatracker.ietf.org/doc/html/rfc3339) | Timestamp of when the occurrence happened
