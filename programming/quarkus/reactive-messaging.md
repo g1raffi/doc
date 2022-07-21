@@ -1,5 +1,36 @@
 # Reactive messaging in Quarkus
 
+## SerDes
+
+### JsonB
+
+Serializer in JsonB are per default implemented when adding the jsonb dependency and configuring:
+
+```properties
+
+mp.messaging.outgoing.$CHANNEL.value.serializer=io.quarkus.kafka.client.serialization.JsonbSerializer
+
+```
+
+Deserializer can be implemented the following way:
+
+```java
+
+public class JsonMessageDeserializer extends JsonbDeserializer<JsonMessage> {
+    public JsonMessageDeserializer() {
+        super(JsonMessage.class);
+    }
+}
+
+```
+
+### Jackson
+
+Serializer changes to: `io.quarkus.kafka.client.serialization.ObjectMapperSerializer`
+
+Deserializer superclass changes to: `ObjectMapperDeserializer`
+
+
 ## Dynamic emit message
 
 To emit messages to dynamic topics or manipulate other metadata:
