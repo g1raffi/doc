@@ -278,11 +278,19 @@ kafka.bootstrap.servers=your-kafka-broker:9092
 
 ### Test your events
 
+Start both of your applications in your favorite IDE or shell:
+
+```shell
+
+./mvnw compile quarkus:dev
+
+```
+
 Fire some requests against your producer and test your CloudEvents getting emitted and consumed!
 
 ```shell
 
-$ curl -X POST localhost:8080/measurments
+$ curl -X POST localhost:8080/measurements
 
 2022-07-21 11:01:56,654 INFO  [org.acm.EventListener] (vert.x-eventloop-thread-10) Received Cloud Events (spec-version: 1.0): id: '98d85610-6d8d-4943-b8ea-641c4940e148', source:  'event-producer', type: 'measurement-emitted', subject: 'subject-123', payload-message: '{"data": 0.12169099891061863}' 
 
