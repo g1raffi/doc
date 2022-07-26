@@ -77,7 +77,7 @@ mvn io.quarkus.platform:quarkus-maven-plugin:2.10.3.Final:create \
 
 ```
 
-And add the extensions:
+Remove the test classes and add the following extensions to your projects' `pom.xml`:
 
 ```xml
 
@@ -180,6 +180,7 @@ import java.util.Random;
 
 @Path("/measurements")
 public class MeasurementsResource {
+
     private final KafkaProducer kafkaProducer;
 
     public MeasurementsResource(KafkaProducer kafkaProducer) {
