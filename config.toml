@@ -1,4 +1,4 @@
-baseURL = "/"
+baseURL = "/doc"
 title = "g1raffi.doc"
 theme = "hugo-geekdoc"
 
