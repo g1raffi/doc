@@ -4,7 +4,10 @@ title: Reactive
 
 ---
 
-# Reactive psql client
+
+# PSQL Quarkus
+
+## Reactive psql client
 
 ```shell
 ./mvnw quarkus:add-extension -Dextensions="reactive-pg-client"
@@ -16,7 +19,7 @@ Starts automatically new devservice psql container with db/user/password = quark
 root@ac1e2f26032a:/# psql -U quarkus -d quarkus -h localhost -p 5432
 ```
 
-# Create InitDB Skript like
+## Create InitDB Skript like
 
 ```java
 
@@ -52,8 +55,7 @@ public class DBInit {
 
 ```
 
-
-# CRUD Operations example
+## CRUD Operations example
 
 ```java
 import io.smallrye.mutiny.Multi;
@@ -110,3 +112,86 @@ public class SensorMeasurement {
     }
 }
 ```
+
+## Generic Map<String, String> jsonb types
+
+Add dependencies:
+
+```xml
+ <dependencies>
+  <dependency>
+   <groupId>io.quarkus</groupId>
+   <artifactId>quarkus-resteasy-reactive-jackson</artifactId>
+  </dependency>
+  <dependency>
+   <groupId>io.quarkus</groupId>
+   <artifactId>quarkus-flyway</artifactId>
+  </dependency>
+  <dependency>
+   <groupId>io.quarkus</groupId>
+   <artifactId>quarkus-hibernate-orm-panache</artifactId>
+  </dependency>
+  <dependency>
+   <groupId>io.quarkiverse.hibernatetypes</groupId>
+   <artifactId>quarkus-hibernate-types</artifactId>
+   <version>0.2.0</version>
+  </dependency>
+  <dependency>
+   <groupId>io.quarkus</groupId>
+   <artifactId>quarkus-resteasy-reactive</artifactId>
+  </dependency>
+  <dependency>
+   <groupId>io.quarkus</groupId>
+   <artifactId>quarkus-jdbc-postgresql</artifactId>
+  </dependency>
+```
+
+Create migration skripts "/resources/db/migration":
+
+**V1.0.0__Model.sql**:
+
+```sql
+CREATE TABLE public.example
+(
+  id integer NOT NULL,
+  content jsonb,
+  CONSTRAINT id_pkey PRIMARY KEY (id)
+)
+```
+
+**V1.0.1__Data.sql**:
+
+```sql
+INSERT INTO public.example (id, content) VALUES (1, '{ "field": "value" }');
+INSERT INTO public.example (id, content) VALUES (2, '{ "anotherField": "anotherValue" }');
+```
+
+Create and define entity:
+
+```java
+import io.quarkiverse.hibernate.types.json.JsonBinaryType;
+import io.quarkiverse.hibernate.types.json.JsonTypes;
+import io.quarkus.hibernate.orm.panache.PanacheEntityBase;
+import org.hibernate.annotations.Type;
+import org.hibernate.annotations.TypeDef;
+import org.hibernate.annotations.TypeDefs;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import java.util.Map;
+
+@Entity
+@TypeDefs({
+        @TypeDef(name = "jsonb", typeClass = JsonBinaryType.class)
+})
+public class Example extends PanacheEntityBase {
+
+    @Id
+    public int id;
+
+    @Type(type = JsonTypes.JSON_BIN)
+    public Map<String, String> content;
+}
+```
+
+Enjoy!
