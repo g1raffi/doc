@@ -1,0 +1,260 @@
+---
+weight: 22
+title: JUnit
+
+---
+
+## Creating Dynamic Tests with JUnit 5
+
+**Event.java**:
+
+```java
+package io.quarkus.mcve.entity;
+
+import io.quarkiverse.hibernate.types.json.JsonBinaryType;
+import io.quarkiverse.hibernate.types.json.JsonTypes;
+import io.quarkus.hibernate.orm.panache.PanacheEntityBase;
+import org.hibernate.annotations.Type;
+import org.hibernate.annotations.TypeDef;
+import org.hibernate.annotations.TypeDefs;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import java.time.Instant;
+import java.util.Map;
+import java.util.UUID;
+
+@Entity
+@TypeDefs({
+        @TypeDef(name = "jsonb", typeClass = JsonBinaryType.class)
+})
+public class Event extends PanacheEntityBase {
+
+    @Id
+    public UUID id;
+    public String description;
+    public Instant timestamp;
+    @Type(type = JsonTypes.JSON_BIN)
+    public Map<String, String> details;
+    @Type(type = JsonTypes.JSON_BIN)
+    public Map<String, String> monitoring;
+}
+```
+
+Configuration yaml file:
+
+**/resources/application.yaml**:
+
+```yaml
+quarkus:
+  flyway:
+    migrate-at-start: true
+  hibernate-orm:
+    database.generation: none
+
+testconfig:
+  suites:
+    - name: suite1
+      api: localhost:8080
+      request-body: '{"user": "g1raffi"}'
+      correlation-id: 1
+      assertions:
+        - name: assertion1
+          from-state: FIRST_STATE
+          to-state: SECOND_STATE
+          max-time-ms: 3100
+        - name: assertion2
+          from-state: FIRST_STATE
+          to-state: THIRD_STATE
+          max-time-ms: 4100
+```
+
+**TestConfiguration.java**:
+
+The test configuration files
+
+```java
+package io.quarkus.mcve.config;
+
+import io.smallrye.config.ConfigMapping;
+
+import java.util.List;
+
+@ConfigMapping(prefix = "testconfig")
+public interface TestConfiguration {
+    List<TestSuite> suites();
+}
+```
+
+**TestSuite.java**:
+
+```java
+package io.quarkus.mcve.config;
+
+import java.util.List;
+
+public interface TestSuite {
+    String name();
+    String correlationId();
+    String api();
+    String requestBody();
+    List<TestAssertion> assertions();
+}
+```
+
+**TestAssertion.java**:
+
+```java
+package io.quarkus.mcve.config;
+
+public interface TestAssertion {
+    String name();
+    String fromState();
+    String toState();
+    Double maxTimeMs();
+}
+```
+
+DB Migration with Flyway:
+
+**/resources/db/migration/V1.0.0__Data.sql**:
+
+```sql
+CREATE TABLE public.event
+(
+    id          uuid NOT NULL,
+    description text,
+    timestamp   timestamp,
+    details     jsonb,
+    monitoring  jsonb,
+    CONSTRAINT id_pkey PRIMARY KEY (id)
+);
+
+INSERT INTO public.event (id, description, "timestamp", details, monitoring) VALUES ('11111111-1111-1111-1111-111111111111', 'description1', '2022-09-06T12:08:42Z', '{ "state": "FIRST_STATE", "correlation-id": "1"}', '{}');
+INSERT INTO public.event (id, description, "timestamp", details, monitoring) VALUES ('44444444-4444-4444-4444-444444444444', 'description4', '2022-09-06T12:08:45Z', '{ "state": "SECOND_STATE", "correlation-id": "1"}', '{}');
+INSERT INTO public.event (id, description, "timestamp", details, monitoring) VALUES ('55555555-5555-5555-5555-555555555555', 'description5', '2022-09-06T12:08:46Z', '{ "state": "THIRD_STATE", "correlation-id": "1"}', '{}');
+```
+
+Finally the test class
+
+**test/java/.../DynamicTestSuites.java**:
+
+```java
+package io.quarkus.mcve;
+
+import io.quarkus.mcve.config.TestAssertion;
+import io.quarkus.mcve.config.TestConfiguration;
+import io.quarkus.mcve.entity.Event;
+import io.quarkus.test.junit.QuarkusTest;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.DynamicTest;
+import org.junit.jupiter.api.TestFactory;
+
+import javax.inject.Inject;
+
+import java.util.List;
+import java.util.Map;
+import java.util.function.Function;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
+import static io.restassured.RestAssured.given;
+import static org.hamcrest.CoreMatchers.is;
+
+@QuarkusTest
+public class DynamicTestSuites {
+
+    @Inject
+    TestConfiguration testConfig;
+
+    @TestFactory
+    public Stream<DynamicTest> testSuiteSize() {
+        return testConfig.suites().stream()
+                .map(testSuite -> DynamicTest.dynamicTest(
+                        "Running suite: " + testSuite.name(),
+                        () -> {
+                            // Fire Event
+                            makeRestCall(testSuite.api(), testSuite.requestBody());
+
+                            // Sleep for Events to finish
+
+                            // Get Event Chain
+                            List<Event> eventChain = getEventChain();
+
+                            // Make assertions
+                            for (TestAssertion assertion : testSuite.assertions()) {
+                                System.out.println("maxTime: " + assertion.maxTimeMs());
+                                System.out.println("getTimeBetweenEvents: " + getTimeBetweenEvents(eventChain, assertion.fromState(), assertion.toState()));
+                                Assertions.assertTrue(assertion.maxTimeMs() > getTimeBetweenEvents(eventChain, assertion.fromState(), assertion.toState()));
+                            }
+                        }
+                ));
+    }
+
+    private long getTimeBetweenEvents(List<Event> eventChain, String fromState, String toState) {
+        Map<String, Event> stateMap = eventChain.stream().collect(Collectors.toMap(
+                event -> event.details.get("state"),
+                Function.identity()
+        ));
+        System.out.println("getTimeBetweenEvents called");
+        System.out.println("fromState time: " + stateMap.get(fromState).timestamp.toEpochMilli());
+        System.out.println("toState time: " + stateMap.get(toState).timestamp.toEpochMilli());
+        return stateMap.get(toState).timestamp.toEpochMilli() - stateMap.get(fromState).timestamp.toEpochMilli();
+    }
+
+    private List<Event> getEventChain() {
+        return Event.listAll();
+    }
+
+    private void makeRestCall(String api, String requestBody) {
+
+    }
+
+}
+```
+
+```xml
+ <dependencies>
+  <dependency>
+   <groupId>io.quarkus</groupId>
+   <artifactId>quarkus-resteasy-reactive-jackson</artifactId>
+  </dependency>
+  <dependency>
+   <groupId>io.quarkus</groupId>
+   <artifactId>quarkus-flyway</artifactId>
+  </dependency>
+  <dependency>
+   <groupId>io.quarkus</groupId>
+   <artifactId>quarkus-hibernate-orm-panache</artifactId>
+  </dependency>
+  <dependency>
+   <groupId>io.quarkiverse.hibernatetypes</groupId>
+   <artifactId>quarkus-hibernate-types</artifactId>
+   <version>0.2.0</version>
+  </dependency>
+  <dependency>
+   <groupId>io.quarkus</groupId>
+   <artifactId>quarkus-resteasy-reactive</artifactId>
+  </dependency>
+  <dependency>
+   <groupId>io.quarkus</groupId>
+   <artifactId>quarkus-config-yaml</artifactId>
+  </dependency>
+  <dependency>
+   <groupId>io.quarkus</groupId>
+   <artifactId>quarkus-jdbc-postgresql</artifactId>
+  </dependency>
+  <dependency>
+   <groupId>io.quarkus</groupId>
+   <artifactId>quarkus-junit5</artifactId>
+   <scope>test</scope>
+  </dependency>
+  <dependency>
+   <groupId>io.rest-assured</groupId>
+   <artifactId>rest-assured</artifactId>
+   <scope>test</scope>
+  </dependency>
+ </dependencies>
+```
+
+Tada!
