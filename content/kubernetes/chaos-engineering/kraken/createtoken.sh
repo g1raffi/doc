@@ -2,9 +2,9 @@
 
 
 # your server name goes here
-server=https://api.ocp-staging.cloudscale.puzzle.ch:6443
+server=https://OCP_HOST:6443
 # the name of the secret containing the service account token goes here
-name=useroot-token-p4klj
+name=asdf
 
 ca=$(kubectl get secret/$name -o jsonpath='{.data.ca\.crt}')
 token=$(kubectl get secret/$name -o jsonpath='{.data.token}' | base64 --decode)
