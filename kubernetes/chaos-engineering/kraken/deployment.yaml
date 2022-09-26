@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: example-web-go
+  name: example-web-go
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      app: example-web-go
+  template:
+    metadata:
+      labels:
+        app: example-web-go
+    spec:
+      containers:
+      - image: quay.io/acend/example-web-go:latest
+        name: example-web-go
+        resources:
+          requests:
+            cpu: 10m
+            memory: 16Mi
+          limits:
+            cpu: 20m
+            memory: 32Mi
