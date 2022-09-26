@@ -95,3 +95,18 @@ done
 
 echo 'Done!'
 ```
+
+## Use internal field in resource
+
+```yaml
+- name: WATCH_NAMESPACE
+  valueFrom:
+    fieldRef:
+      apiVersion: v1
+      fieldPath: metadata.namespace
+- name: POD_NAME
+  valueFrom:
+    fieldRef:
+      apiVersion: v1
+      fieldPath: metadata.name
+```

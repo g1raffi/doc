@@ -1,16 +1,11 @@
 ---
 weight: 71
-title: CHaos Engineering
+title: Chaos Engineering
 
 
 ---
 
-
-## Principles of chaos engineering
-
-Chaos Engineering is the discipline of experimenting on a system in order to build confidence in the system’s capability to withstand turbulent conditions in production.
-
-Fallacies of distributed computing:
+In the world of distributed computing we face a lot of new problems. Requirements change from steady stability into distributed architectures consisting of a multitude of services. Coming from the familiar world we take several things as granted, often called as the eight fallacies of distributed computing:
 
 * The network is reliable
 * There is zero latency
@@ -21,13 +16,19 @@ Fallacies of distributed computing:
 * Consistent resource usage with no spikes
 * All shared resources are available from all places
 
+With supercharging our microservice architectures by following devops and gitops principles, we can rollout as fast as possible. Using the ability to make production ready deployments every few hours / days, we need to have confidence in our system. We can improve confidence by using testing principles. Software sided tests verify the integrity of our code. Infrastucutre test verify the theoretical and practical representation of our infrastructure as code. If we even go further, we use these combined and test our system end to end automatically.
+
+There is also the other side of the medal. Even with having all the tests described above, we still should be on our toes. Classical approaches of testing verify the desired and intended state / workflow of our systems. What about the unpredictable? What about chaos?
+
+## Principles of chaos engineering
+
+Chaos Engineering describes the discipline of creating scanarios simulating turbulent conditions to build confidence in our systems robustness.
+
 Even when all of the individual services in a distributed system are functioning properly, the interactions between those services can cause unpredictable outcomes. Unpredictable outcomes, compounded by rare but disruptive real-world events that affect production environments, make these distributed systems inherently chaotic.
 
-We need to identify weaknesses before they manifest in system-wide, aberrant behaviors. Systemic weaknesses could take the form of: improper fallback settings when a service is unavailable; retry storms from improperly tuned timeouts; outages when a downstream dependency receives too much traffic; cascading failures when a single point of failure crashes; etc. We must address the most significant weaknesses proactively, before they affect our customers in production. We need a way to manage the chaos inherent in these systems, take advantage of increasing flexibility and velocity, and have confidence in our production deployments despite the complexity that they represent.
+An empirical, systems-based approach addresses the chaos in distributed systems at scale and builds confidence in the ability of those systems to withstand realistic conditions.
 
-An empirical, systems-based approach addresses the chaos in distributed systems at scale and builds confidence in the ability of those systems to withstand realistic conditions. We learn about the behavior of a distributed system by observing it during a controlled experiment. We call this Chaos Engineering.
-
-## CHAOS IN PRACTICE
+## Chaos in practice
 
 To specifically address the uncertainty of distributed systems at scale, Chaos Engineering can be thought of as the facilitation of experiments to uncover systemic weaknesses. These experiments follow four steps:
 
