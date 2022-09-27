@@ -1,4 +1,22 @@
 portalScope: namespace
-portal.server.service.type: ClusterIP
-portal.frontend.service.type: ClusterIP
-openshift.route.enabled: true
+portal:
+  server:
+    authServer:
+      securityContext: null
+    graphqlServer:
+      securityContext: null
+    service:
+      type: ClusterIP
+  frontend:
+    securityContext: null
+    service:
+      type: ClusterIP
+openshift:
+  route:
+    enabled: true
+
+mongodb:
+  containerSecurityContext:
+    enabled: false
+  podSecurityContext:
+    enabled: false
