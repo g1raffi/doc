@@ -34,7 +34,7 @@ Resulting from these scenarios you will either gain confidence from the start, o
 
 Before introducing a new tool to our already widely spread armory, I'd like to consider the [CNCF Landscape](https://landscape.cncf.io/). Luckily they already have a section for Chaos Engineering Tools ready:
 
-![Chaos Engineering Section CNCF Landscape](cncf_chaos.png)
+![Chaos Engineering Section CNCF Landscape](/litmus-blog/cncf_chaos.png)
 
 Because I was already very familiar with Argo I chose Litmus going forward. Under the hood Litmus builds upon Argo to run scenarios as Workflows.
 
@@ -114,11 +114,11 @@ Username: admin
 Password: litmus
 ``` 
 
-![Litmus Landing Page](litmus_home.png)
+![Litmus Landing Page](/litmus-blog/litmus_home.png)
 
 Verify in the Menu under `Chaos Delegates` that there is one delegate in the scope `Namespace` called `Self-Agent` with status `Active`. When your self-agent Chaos Delegate is all set and ready, it's time to create your first Chaos Scenario!
 
-![Litmus Control Hub](litmus_delegates.png)
+![Litmus Control Hub](/litmus-blog/litmus_delegates.png)
 
 ### Your very first scenario
 
@@ -176,15 +176,15 @@ Head over to the `Chaos Scenarios` menu item and click `Scedule a new Scenario`,
 
 In the next screen we can create the Argo Workflow which will represent our Chaos Scenario:
 
-![Chaos Scenario Workflow](new-chaos-scenario.png)
+![Chaos Scenario Workflow](/litmus-blog/new-chaos-scenario.png)
 
 Add a new Chaos Experiment and select from the tempate list "generic/pod-delete". With the edit button you can edit your Chaos Experiment. Let's update it first to delete the pods we just created with the selector `app=example-web-go`:
 
-![Chaos Scenario Edit 1](edit-scenario.png)
+![Chaos Scenario Edit 1](/litmus-blog/edit-scenario.png)
 
 After defining the selector you will have to define a probe, which will verify the state of the applicaiton. In this case we will simply define a probe which sends a HTTP GET request to `http://example:5000/` and expects the return code to be equal `200`:
 
-![Chaos Scenario Probe](edit-probe.png)
+![Chaos Scenario Probe](/litmus-blog/edit-probe.png)
 
 When you have added the probe, finish the experiment and the creation of your scenario. You can choose to schedule your Chaos Scenario right now!
 
