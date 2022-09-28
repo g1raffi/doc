@@ -34,7 +34,7 @@ Resulting from these scenarios you will either gain confidence from the start, o
 
 Before introducing a new tool to our already widely spread armory, I'd like to consider the [CNCF Landscape](https://landscape.cncf.io/). Luckily they already have a section for Chaos Engineering Tools ready:
 
-![Chaos Engineering Section CNCF Landscape](/static/litmus-blog/cncf_chaos.png)
+![Chaos Engineering Section CNCF Landscape](kubernetes/chaos-engineering/litmus/blog/cncf_chaos.png)
 
 Because I was already very familiar with Argo I chose Litmus going forward. Under the hood Litmus builds upon Argo to run scenarios as Workflows.
 
@@ -109,10 +109,10 @@ oc get route chaos-litmus-route -ogo-template='{{ .spec.host }}'
 
 Log into the control hub with the credentials:
 
-```
+```txt
 Username: admin
 Password: litmus
-``` 
+```
 
 ![Litmus Landing Page](/litmus-blog/litmus_home.png)
 
