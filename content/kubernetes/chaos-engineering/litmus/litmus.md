@@ -8,6 +8,8 @@ title: Litmus
 
 Installation [Guide](https://docs.litmuschaos.io/docs/user-guides/chaoscenter-namespace-scope-installation/)
 
+
+
 Create scc:
 
 ```yaml
