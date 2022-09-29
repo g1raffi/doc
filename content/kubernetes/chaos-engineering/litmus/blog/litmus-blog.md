@@ -180,11 +180,11 @@ In the next screen we can create the Argo Workflow which will represent our Chao
 
 Add a new Chaos Experiment and select from the tempate list "generic/pod-delete". With the edit button you can edit your Chaos Experiment. Let's update it first to delete the pods we just created with the selector `app=example-web-go`:
 
-![Chaos Scenario Edit 1](https://github.com/g1raffi/doc/blob/master/content/kubernetes/chaos-engineering/litmus/blog/edit-scenario.png)
+![Chaos Scenario Edit 1](https://github.com/g1raffi/doc/blob/master/content/kubernetes/chaos-engineering/litmus/blog/edit-scenario.png?raw=true)
 
 After defining the selector you will have to define a probe, which will verify the state of the applicaiton. In this case we will simply define a probe which sends a HTTP GET request to `http://example:5000/` and expects the return code to be equal `200`:
 
-![Chaos Scenario Probe](https://github.com/g1raffi/doc/blob/master/content/kubernetes/chaos-engineering/litmus/blog/edit-probe.png)
+![Chaos Scenario Probe](https://github.com/g1raffi/doc/blob/master/content/kubernetes/chaos-engineering/litmus/blog/edit-probe.png?raw=true)
 
 When you have added the probe, finish the experiment and the creation of your scenario. You can choose to schedule your Chaos Scenario right now!
 
