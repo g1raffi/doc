@@ -1,6 +1,6 @@
 # Chaos Engineering with Litmus
 
-Cloud native technologies allow us to bring supercharged architectures up and running in no time. Resources get smaller and more lightweight. Adding Infrastructure as Code and GitOps concepts we are enabled to rollout more frequent and more distributed than ever before. But are we confident in our systems? Adding a little chaos to the mix will massively improve the confidence in the systems we build.
+Cloud native technologies allow us to bring supercharged architectures up and running in no time. Resources get smaller and more lightweight. Adding Infrastructure as Code and GitOps concepts we are enabled to rollout more frequently and more distributed than ever before. But are we confident in our systems? When will we start building more confidence in our system? Acknowledging that our systems should not be fault-less but rather fault-tolerant, will adopt our view enormously. In this article I will present how adding a little chaos to the mix will massively improve the confidence in the systems we build.
 
 ## Principles of Chaos
 
@@ -21,11 +21,11 @@ With the principles of chaos engineering, we try to simulate these events and ga
 
 ### In practice
 
-Defining a empirical approach to chaotic behaviour can follow these four steps:
+Defining an empirical approach to chaotic behaviour can follow these four steps:
 
 1. Define a 'steady state' with measurable output of your system in normal circumstances
 2. Create a hypothesis that your system will continue under chaotic behaviour the same as in normal every day business
-3. Introduce scenarios that reflect real world events (Application crashes, Memory shortage, ...)
+3. Introduce scenarios that reflect real world events (application crashes, memory shortage, ...)
 4. Verify your hypothesis by comparing the difference in the steady state and the behaviour in the chaotic world
 
 Resulting from these scenarios you will either gain confidence from the start, or you will detect weaknesses in your system that you will improve.
@@ -182,7 +182,7 @@ Add a new Chaos Experiment and select from the tempate list "generic/pod-delete"
 
 ![Chaos Scenario Edit 1](https://github.com/g1raffi/doc/blob/master/content/kubernetes/chaos-engineering/litmus/blog/edit-scenario.png?raw=true)
 
-After defining the selector you will have to define a probe, which will verify the state of the applicaiton. In this case we will simply define a probe which sends a HTTP GET request to `http://example:5000/` and expects the return code to be equal `200`:
+After defining the selector you will have to define a probe, which will verify the state of the applicaiton. In this case we will simply define a probe which sends a HTTP GET request to `http://example:5000/` (which is our service we created) and expects the return code to be equal `200`:
 
 ![Chaos Scenario Probe](https://github.com/g1raffi/doc/blob/master/content/kubernetes/chaos-engineering/litmus/blog/edit-probe.png?raw=true)
 
