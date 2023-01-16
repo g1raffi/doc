@@ -110,3 +110,24 @@ echo 'Done!'
       apiVersion: v1
       fieldPath: metadata.name
 ```
+
+## Create SA KUBECONFIG
+
+Create SA:
+
+```shell
+oc create serviceaccount github-deployer
+```
+
+(Optional) Add Role and RoleBinding for deployment rights
+
+Create local KUBECONFIG:
+
+```shell
+TOKEN=$(oc sa get-token github-deployer)
+export KUBECONFIG=github-deployer.kubeconfig
+oc login --server=$(oc config view --minify -o jsonpath='{.clusters[*].cluster.server}') --token=$TOKEN
+unset KUBECONFIG
+```
+
+The KUBECONFIG is generated in the location `github-deployer.kubeconfig`.
